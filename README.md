@@ -1,2 +1,4 @@
-# ds-cr-slides
-Slides for digital skills good practices in research software development
+# Good Practices in Research Software Development
+
+A CodeRefinery workshop
+

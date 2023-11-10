@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Testing</title>
+
+    <meta name="description" content="Getting more professional">
+    <meta name="author" content="Ole Mussmann">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="reveal.js/4.3.1/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="reveal.js/4.3.1/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="reveal.js/4.3.1/reveal.js/dist/theme/black.css" id="theme">
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="reveal.js/4.3.1/reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+
+    <!-- tweak colors and minor details -->
+    <link rel="stylesheet" href="reveal.js/custom_css/escience_4.3.1.css" id="theme">
+
+    <link rel="shortcut icon" type="image/png" href="./files/favicon-32x32.png"/>
+  </head>
+
+  <body onload="setTimeout(function(){addDecorations();}, 100);">
+    <div class="reveal">
+
+      <div id="hidden" style="display: none;">
+        <div id="decoration">
+          <div id="blue_pane_left" style="transition: opacity 1s; background-color: #009DDD; opacity: 0; position: absolute; left: 0; right: 50%; bottom: 0; top: 0; z-index: 2;"></div>
+          <div id="blue_pane_right" style="transition: opacity 1s; background-color: #009DDD; opacity: 0; position: absolute; left: 50%; right: 0; bottom: 0; top: 0; z-index: 2;"></div>
+          <div id="touch_pane" style="background-color: white; transition: opacity 1s; opacity: 0; position: absolute; left: 0; right: 66.6%; bottom: 0; top: 0; display: flex; align-items: center; justify-content: center; z-index: 2;">
+            <h1 style="color: black; text-align: left;">Let's stay<br>in touch</h1>
+          </div>
+          <div id="purple_half_circle_top" style="transition: top 1s; opacity: 1; position: absolute; background-color: #380339; left: 0; top: -17vw; width: 34vw; height: 17vw; border-radius: 0 0 20vw 20vw; z-index: 2;"></div>
+          <div id="yellow_half_strip" style="opacity: 1; transition: bottom 1s; position: absolute; background-color: #FFB213; right: 50%; bottom: -25vw; width: 17vw; height: 25vw; border-radius: 20vw 0 0 0; z-index: 2;"></div>
+          <div id="purple_strip_bottom" style="opacity: 1; transition: bottom 1s; position: absolute; background-color: #380339; right: calc(50% + 17vw); bottom: -10vw; width: 16vw; height: 10vw; border-radius: 20vw 20vw 0 0; z-index: 2;"></div>
+          <div id="logo_color" style="transition: opacity 1s, left 1s; opacity: 0; position: absolute; left: -12vw; top: 1.5vh; z-index: 2;">
+            <img style="width: 12vw;" src="./files/logo-fc.svg">
+          </div>
+          <div id="logo_part_white" style="transition: opacity 1s, left 1s; opacity: 0; position: absolute; left: -12vw; top: 1.5vh; z-index: 2;">
+            <img style="width: 12vw;" src="./files/logo-fc-part-white.svg">
+          </div>
+          <div id="logo_white" style="transition: opacity 1s, left 1s; opacity: 0; position: absolute; left: -12vw; top: 1.5vh; z-index: 2;">
+            <img style="width: 12vw;" src="./files/logo-fc-white.svg">
+          </div>
+          <div id="purple_overlay" style="background-color: #380339; opacity: 0; transition: opacity 1s; position: absolute; left: 0; right: 0; bottom: 0; top: 0; z-index: 1;">
+          </div>
+          <div id="blue_overlay" style="background-color: #009DDD; opacity: 0; transition: opacity 1s; position: absolute; left: 0; right: 0; bottom: 0; top: 0; z-index: 1;">
+          </div>
+          <div id="white_overlay" style="background-color: white; opacity: 0; transition: opacity 1s; position: absolute; left: 0; right: 0; bottom: 0; top: 0; z-index: 1;">
+          </div>
+          <div id="black_overlay" style="background-color: black; opacity: 0; transition: opacity 1s; position: absolute; left: 0; right: 0; bottom: 0; top: 0; z-index: 1;">
+          </div>
+          <div id="yellow_strip" style="background-color: #FFB213; transition: left 1s; width: 10vw; height: 70vh; border-radius: 10vw 10vw 0 0; z-index: 2; position: absolute; left: -10vw; bottom: 0;">
+          </div>
+          <div id="yellow_flag" style="background-color: #FFB213; transition: left 1s, bottom 1s; width: 10vh; height: 12vh; border-radius: 0 6vh 6vh 0; z-index: 3; position: absolute; left: -10vh; bottom: 5vh; margin: 0; padding: 0;">
+            <img id="left_e" src="./files/e-logo.svg" style="position: absolute; height: 10vh; margin: 1vh 0; padding: 0;"></img>
+          </div>
+          <div id="purple_half_circle_bottom" style="transition: bottom 1s; background-color: #380339; width: 20vw; height: 10vw; border-radius: 20vw 20vw 0 0; z-index: 2; position: absolute; left: 0; bottom: -10vw;">
+            <img id="left_e" src="./files/logo-fc-part-white.svg" style="position: absolute; bottom: 2vw; left: 6vw; width: 8vw;"></img>
+          </div>
+          <div id="purple_blob" style="transition: top 1s; position: absolute; display: flex; right: 0; top: -50vh; z-index: 2;">
+            <div style="background-color: #380339; width: 10vw; height: 25vh; border-radius: 0 0 10vw 10vw;">
+            </div>
+            <div style="background-color: #380339; width: 10vw; height: 50vh; border-radius: 0 0 10vw 10vw;">
+            </div>
+            <div class="box" style="background: #380339; position: absolute; right: 10vw; top: 0; width: 5vw; height: calc(25vh + 5vw); border-corner-shape: scoop; background: yellow; background: linear-gradient(45deg,  transparent 10vw, #380339 0) bottom left; background-image: radial-gradient(circle at 0 100%, rgba(204,0,0,0) 5vw, #380339 15px)">
+            </div>
+          </div>
+          <div id="blue_strip" style="background-color: #009DDD; transition: left 1s, right 1s; margin: 0; padding: 0; border-radius: 20vw 0 0 0; z-index: 2; position: absolute; right: -100vw; bottom: 0;">
+            <div id="footer" style="text-align: right; line-height: 130%; padding: 0; margin: 1vw 1vw 1vw 3vw; bottom: 0; right: 0;">
+            </div>
+          </div>
+          <img id="right_e" src="./files/letter-e.svg" style="transition: right 1s, top 1s; position: absolute; top: 10vh; right: -4vw; width: 4vw; z-index: 3;"></img>
+        </div>
+      </div>
+
+      <div class="slides">
+        <section data-markdown="00_title.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<!--
+title: Testing
+description: Getting more professional
+author: Ole Mussmann
+version: 4.3.1
+plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, RevealMenu, RevealNotes, RevealSearch, RevealZoom
+-->
+
+<!-- .slide: data-state="blue_overlay yellow_flag yellow_strip purple_half_circle_bottom purple_blob right_e_top" data-background-video="./files/606762245.mp4" data-background-video-loop data-background-video-muted="true" -->
+<!-- https://pixabay.com/videos/engine-motor-mechanic-technology-5497/ -->
+
+# Testing
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+## Why Test?
+
+<ul>
+  <li>Preserve functionality
+  <ul>
+    <li>Detect new errors early</li>
+    <li>Facilitate reproducibility for research software</li>
+  </ul></li>
+  <li class="fragment">Help users
+  <ul>
+    <li>Verify correct installation</li>
+    <li>Improve correctness for research output</li>
+  </ul></li>
+  <li class="fragment">Enable developers
+  <ul>
+    <li>Make refactoring easier</li>
+    <li>Simplify external contributions</li>
+  </ul></li>
+</ul>
+
+<h3 style="margin-top: 1em;" class="fragment">🧮 Manage Complexity 🧩</h3>
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+## Test Types
+
+<ul>
+  <li>Unit test
+  <ul class="fragment fade-up" data-fragment-index="1">
+    <li>Smallest possible unit</li>
+    <li>No dependency on outside code...</li>
+    <li>(... replace them with mocks, stubs, etc.)</li>
+  </ul></li>
+</ul>
+<ul class="fragment fade-up" data-fragment-index="2">
+  <li>Integration test
+  <ul class="fragment fade-up" data-fragment-index="3">
+    <li>Test unit interaction</li>
+    <li>Can be on small scales, or system wide</li>
+  </ul></li>
+</ul>
+
+<div class="fragment fade-up" data-fragment-index="4" style='position:relative; padding: 0 0 calc(55.00% + 44px) 0; margin: -9em auto 0 auto;'><iframe src='https://gfycat.com/ifr/BriefUniformHornet' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div><p style="font-size: large; margin: 0; padding: 0;"> <a href="https://gfycat.com/briefuniformhornet">via Gfycat</a></p>
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+
+## How much testing is enough?
+
+Test metrics:
+
+- lines of code : lines of tests (target: 1:3)
+- test coverage [example](https://sonarcloud.io/component_measures?id=eWaterCycle_ewatercycle&metric=coverage&view=treemap&selected=eWaterCycle_ewatercycle%3Aewatercycle)
+
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+# PyTest
+
+- recommended python testing framework
+- [docs.pytest.org](https://docs.pytest.org/en/7.3.x/)
+
+![](.files/pytest_logo.svg)
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+## Write Code
+
+<pre><code class="bash" style="overflow: hidden;" data-trim class="bash" data-line-numbers>
+$ mkdir pytest-example
+$ cd pytest-example
+</code></pre>
+
+<div class="fragment">
+Creating a file <code>example.py</code> containing
+<pre><code class="python" style="overflow: hidden;" data-trim class="bash" data-line-numbers>
+def add(a, b):
+    return a + b
+&nbsp;
+&nbsp;
+def test_add():  # Special name!
+    assert add(2, 3) == 5  # What's `assert`? 🤔
+    assert add('space', 'ship') == 'spaceship'
+</code></pre>
+</div>
+
+<div class="fragment">
+Chat with the python shell about <code>assert</code> ...
+</div>
+<div class="fragment">
+<pre><code class="python" style="overflow: hidden;" data-trim class="bash" data-line-numbers>
+>>> assert 1==1  # passes
+>>> assert 1==2  # throws error
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+AssertionError
+</code></pre>
+
+</div>
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+## Test!
+
+<pre><code style="overflow: hidden;" data-trim class="bash" data-line-numbers="1|1-9">
+$ pytest example.py
+======================== test session starts ========================
+platform linux -- Python 3.6.9, pytest-7.0.1, pluggy-1.0.0
+rootdir: /home/ole/Desktop/pytest-texample
+collected 1 item
+
+example.py .                                                  [100%]
+
+========================= 1 passed in 0.00s =========================
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+## Breaking Things
+
+<pre><code class="python" style="overflow: hidden;" data-trim class="bash" data-line-numbers>
+def add(a, b):
+    return a - b  # Uh oh, mistake! 😱
+
+
+def test_add():
+    assert add(2, 3) == 5
+    assert add('space', 'ship') == 'spaceship'
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+## Testing Again
+
+<pre><code style="overflow: hidden;" data-trim class="bash" data-line-numbers="1|2-8|9-17|18-20">
+$ pytest example.py
+======================== test session starts =========================
+platform linux -- Python 3.6.9, pytest-7.0.1, pluggy-1.0.0
+rootdir: /home/ole/Desktop/pytest-texample
+collected 1 item
+
+example.py F                                                   [100%]
+
+============================== FAILURES ==============================
+______________________________ test_add ______________________________
+
+    def test_add():
+>       assert add(2, 3) == 5
+E       assert -1 == 5
+E        +  where -1 = add(2, 3)
+
+example.py:6: AssertionError
+====================== short test summary info =======================
+FAILED example.py::test_add - assert -1 == 5
+========================= 1 failed in 0.05s ==========================
+</code></pre>
+
+<ul>
+  <li class="fragment">🚀❓<span class="fragment">Functions fail on first error</span></li>
+  <li class="fragment">But all test functions are executed</li>
+</ul>
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+## Take-away
+
+- pytest collects and runs all test functions starting with <code>test_</code>
+- The tests pass when they do not throw (assertion) errors
+
+<pre style="width: max-content;"><code style="overflow: hidden;" class="python" data-trim class="bash" data-line-numbers>
+def steal_sheep():
+    ...
+def paint_cows():
+    ...
+
+# optionally in another file:
+
+def test_steal_sheep():
+    ...
+def test_paint_cows():
+    ...
+</code></pre>
+
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+# Recap: pure functions
+
+<div style="width: 59%; float: left;">
+<ul style="margin-top: 1ex;">
+  <li>Are deterministic</li>
+  <li>Have a return value</li>
+  <li>Have no side effects<sup>[1]</sup></li>
+  <li>Have referential transparency<sup>[2]</sup></li>
+<ul>
+</div>
+
+<div style="width: 39%; float: right;">
+<pre class="fragment" style="width: max-content;" data-id="code-animation"><code class="python" style="overflow: hidden; padding-left: 1em; padding-right: 1em;" data-trim data-noescape class="bash" data-line-numbers="1-2|1-6|4-8">
+def last(my_array):
+    return my_array[-1]
+&nbsp;
+def add(a, b):
+    return a + b
+&nbsp;
+print(add(1, 2))
+print(3)
+</code></pre>
+</div>
+
+<h4 class="fragment" style="width: 100%; float: left; margin-top: 1em;">Pure functions are easy to understand and test!</h4>
+
+<footer>
+[1] Side effects: interactions of a function with its surroundings
+<br>
+[2] Replacing a function call with the return of that function should not change anything
+</footer>
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+## Impure Functions
+
+<div style="width: 46%; float: left;">
+intuitive...
+<pre style="width: max-content;" data-id="code-animation"><code class="python" style="overflow: hidden;" data-trim data-noescape class="bash" data-line-numbers="1-4|7-8|11-12">
+my_list = []
+&nbsp;
+def append_to_my_list(item):
+    my_list.append(item)
+&nbsp;
+&nbsp;
+def read_data(file_name):
+    return pd.read_csv(file_name)
+&nbsp;
+&nbsp;
+def get_random_number(number):
+    return random.random()
+&nbsp;
+</code></pre>
+</div>
+
+<div class="fragment" style="width: 53%; float: right;">
+... and not so intuitive
+<pre style="width: max-content;" data-id="code-animation"><code class="python" style="overflow: hidden;" data-trim data-noescape class="bash" data-line-numbers="1-2|5-9|5-13">
+def hello(name):
+    print("Hello", name)
+&nbsp;
+&nbsp;
+nums = [1, 2]
+&nbsp;
+def append(a_list, item):
+    a_list += [item]
+    return a_list
+&nbsp;
+print(nums)            # [1, 2]
+print(append(nums, 3)) # [1, 2, 3]
+print(nums)            # [1, 2, 3] 😬</span>
+</code></pre>
+</div>
+
+<ul class="fragment">
+  <li>Side effects are sometimes necessary</li>
+  <li>Some side effects are hard to spot</li>
+</ul>
+
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+## Take-away
+
+- Use pure functions when possible 👌
+- Testing does not have to be hard 👏
+  - You test anyways, but then throw the test away 🧐
+- You don't have to strive for 💯% test coverage
+- Aim for a balance between unit- and integration tests ⚖️
+- Testing removes the dread of refactoring 🔁
+- Your future you will thank you 🙏
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+## Test-Driven Development: FizzBuzz Function
+
+<div class="r-stack">
+  <img src="./files/fizz_buzz_1.svg">
+  <img class="fragment" data-fragment-index="1" src="./files/fizz_buzz_2.svg">
+  <img class="fragment" data-fragment-index="2" src="./files/fizz_buzz_3.svg">
+  <img class="fragment" data-fragment-index="3" src="./files/fizz_buzz_4.svg">
+  <img class="fragment" data-fragment-index="4" src="./files/fizz_buzz_5.svg">
+  <img class="fragment" data-fragment-index="5" src="./files/fizz_buzz_6.svg">
+</div>
+
+<ul>
+  <li>fizz_buzz() takes an integer argument and returns it, BUT</li>
+  <ul>
+    <li class="fragment" data-fragment-index="1">fails on zero or negative numbers</li>
+    <li class="fragment" data-fragment-index="2">instead returns "Fizz" on multiples of 3</li>
+    <li class="fragment" data-fragment-index="3">instead returns "Buzz" on multiples of 5</li>
+    <li class="fragment" data-fragment-index="5">instead returns "FizzBuzz" on multiples of 3 and 5</li>
+  </ul>
+</ul>
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+## FizzBuzz Function
+
+<ul>
+  <li>fizz_buzz() takes an integer argument and returns it, BUT</li>
+  <ul>
+    <li>fails on zero or negative numbers</li>
+    <li>instead returns "Fizz" on multiples of 3</li>
+    <li>instead returns "Buzz" on multiples of 5</li>
+    <li>instead returns "FizzBuzz" on multiples of 3 and 5</li>
+  </ul>
+  <li class="fragment">Create an empty function fizz_buzz()</li>
+  <li class="fragment">Write the tests</li>
+  <li class="fragment">Paste your tests in the collab document, and discuss</li>
+  <li class="fragment">Now write a function code to make your tests pass</li>
+</ul>
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+## Take-away
+
+- What did you think of this style of development?
+- Was it easier or harder than just writing code?
+- Would your code look different without the tests? <!-- .element class="fragment" -->
+- For what kind of projects would it be useful? <!-- .element class="fragment" -->
+
+<div class="fragment" style="width: 20vw; margin: 1em auto;">Test-Driven Development (TDD) is an optional tool in your toolbox 🛠️</div>
+
+</section>
+
+      </div>
+    </div>
+
+    <script src="reveal.js/4.3.1/reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js/plugin/zoom/zoom.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js/plugin/math/math.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js/plugin/search/search.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js-plugins/menu/menu.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js-plugins/chalkboard/plugin.js"></script>
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="reveal.js/4.3.1/reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+    <link rel="stylesheet" href="reveal.js/4.3.1/reveal.js-plugins/chalkboard/style.css">
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+          themes: false,
+          transitions: false,
+          markers: true,
+          hideMissingTitles: true,
+        },
+        dependencies: [
+          {src: 'reveal.js/4.3.1/reveal.js-plugins/reveal.js-d3/reveald3.js'}
+        ],
+        chalkboard: { // font-awesome.min.css must be available
+          //		src: "chalkboard/chalkboard.json",
+          storage: "chalkboard-demo",
+          toggleChalkboardButton: { left: "80px" },
+          toggleNotesButton: { left: "130px" },
+          readOnly: false,
+        },
+        plugins: [ RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, RevealMenu, RevealNotes, RevealSearch, RevealZoom ]
+      });
+    </script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var decoration = $('#decoration').html();
+      if ( window.location.search.match( /print-pdf/gi ) ) {
+        // for pdf export
+        // 3. On Reveal.js ready event, copy decoration <div> into each `.slide-background` <div>
+        Reveal.addEventListener( 'ready', function( event ) {
+          $('.slide-background').append(decoration);
+        });
+      }
+      else {
+        // for viewing slides
+        $('div.reveal').append(decoration);
+        $('#decoration').remove(); // without this the fadeIn/fadeOut below does not work. why is this necessary?
+      };
+      function setLogoStyle(style) {
+        //style must be one of {"logo_color","logo_white","logo_part_white"}
+
+        //unset everything
+        document.getElementById("logo_color").style.opacity = 0;
+        document.getElementById("logo_white").style.opacity = 0;
+        document.getElementById("logo_part_white").style.opacity = 0;
+
+        //set only what we want
+        document.getElementById(style).style.opacity = 1;
+      };
+      var overview_shown = false;
+      function getOpacity(data_state) {
+        var opacity = 0.8;
+        for (let i = 0; i < 11; i++) {
+          if (data_state.includes(i)) { opacity = i/10; console.log("opacity set to " + opacity)}
+        };
+        return opacity
+      };
+      function addDecorations() {
+        console.log("== set decorations ==")
+        var currentSlide = Reveal.getCurrentSlide();
+        console.log(currentSlide.querySelector("footer"));
+        if (currentSlide.contains(currentSlide.querySelector('footer')))
+        {
+          document.getElementById("footer").innerHTML = currentSlide.querySelector('footer').innerHTML;
+          document.getElementById("blue_strip").style.right = 0;
+          console.log("footer (and blue_strip)");
+        } else {
+          document.getElementById("blue_strip").style.right = "-" + document.getElementById("blue_strip").offsetWidth + "px";
+          console.log("no footer");
+        };
+        if ( currentSlide.getAttribute('data-state') )
+        {
+          var data_state = currentSlide.getAttribute('data-state')
+          var opacity = getOpacity(data_state);
+          console.log("DS" + data_state)
+          // pre-set slide designs
+
+          // standard
+          if ( data_state.includes("standard"))
+          {
+            data_state += " logo yellow_flag white_overlay";
+          };
+
+          // two_pane
+          if ( data_state.includes("two_pane"))
+          {
+            data_state += " logo yellow_flag white_overlay blue_pane_right";
+          };
+
+          // about
+          if ( data_state.includes("about"))
+          {
+            data_state += " logo white_overlay blue_pane_left purple_half_circle_top purple_strip_bottom yellow_half_strip";
+          };
+
+          // touch
+          if ( data_state.includes("touch"))
+          {
+            data_state += " logo blue_overlay touch_pane purple_blob right_e_bottom";
+          };
+
+          // individual elements
+
+          // purple overlay
+          if ( data_state.includes("purple_overlay"))
+          {
+            document.getElementById("purple_overlay").style.opacity = opacity;
+            document.getElementById("purple_overlay").style.transform = "translateY(0)";
+            document.getElementById("logo_color").style.opacity = 0;
+            document.getElementById("logo_white").style.opacity = 0;
+            document.getElementById("logo_part_white").style.opacity = 1;
+            currentSlide.classList.remove("has-light-background");
+            console.log("purple overlay");
+          } else {
+            document.getElementById("purple_overlay").style.opacity = 0;
+            console.log("no purple overlay");
+          };
+
+          // white overlay
+          if ( data_state.includes("white_overlay"))
+          {
+            document.getElementById("white_overlay").style.opacity = opacity;
+            document.getElementById("white_overlay").style.transform = "translateY(0)";
+            document.getElementById("logo_color").style.opacity = 1;
+            document.getElementById("logo_white").style.opacity = 0;
+            document.getElementById("logo_part_white").style.opacity = 0;
+            currentSlide.classList.add("has-light-background");
+            console.log("white overlay");
+          } else {
+            document.getElementById("white_overlay").style.opacity = 0;
+            console.log("no white overlay");
+          };
+
+          // black overlay
+          if ( data_state.includes("black_overlay"))
+          {
+            document.getElementById("black_overlay").style.opacity = opacity;
+            document.getElementById("black_overlay").style.transform = "translateY(0)";
+            document.getElementById("logo_color").style.opacity = 0;
+            document.getElementById("logo_white").style.opacity = 0;
+            document.getElementById("logo_part_white").style.opacity = 1;
+            currentSlide.classList.remove("has-light-background");
+            console.log("black overlay");
+          } else {
+            document.getElementById("black_overlay").style.opacity = 0;
+            console.log("no black overlay");
+          };
+
+          // blue overlay
+          if ( data_state.includes("blue_overlay"))
+          {
+            document.getElementById("blue_overlay").style.opacity = opacity;
+            document.getElementById("blue_overlay").style.transform = "translateY(0)";
+            document.getElementById("logo_color").style.opacity = 0;
+            document.getElementById("logo_white").style.opacity = 1;
+            document.getElementById("logo_part_white").style.opacity = 0;
+            currentSlide.classList.remove("has-light-background");
+            console.log("blue overlay");
+          } else {
+            document.getElementById("blue_overlay").style.opacity = 0;
+            console.log("no blue overlay");
+          };
+
+          // blue pane right
+          if ( data_state.includes("blue_pane_right"))
+          {
+            document.getElementById("blue_pane_right").style.opacity = 1;
+            currentSlide.classList.remove("has-dark-background");
+            currentSlide.classList.add("has-light-background");
+            console.log("blue_pane_right");
+          } else {
+            document.getElementById("blue_pane_right").style.opacity = 0;
+            console.log("no blue_pane_right");
+          };
+
+          // blue pane left
+          if ( data_state.includes("blue_pane_left"))
+          {
+            document.getElementById("blue_pane_left").style.opacity = 1;
+            setLogoStyle("logo_white");
+            currentSlide.classList.remove("has-dark-background");
+            currentSlide.classList.add("has-light-background");
+            console.log("blue_pane_left");
+          } else {
+            document.getElementById("blue_pane_left").style.opacity = 0;
+            console.log("no blue_pane_left");
+          };
+
+          // touch pane
+          if ( data_state.includes("touch_pane"))
+          {
+            document.getElementById("touch_pane").style.opacity = 1;
+            setLogoStyle("logo_color");
+            currentSlide.classList.remove("has-light-background");
+            currentSlide.classList.add("has-dark-background");
+            console.log("touch_pane");
+          } else {
+            document.getElementById("touch_pane").style.opacity = 0;
+            console.log("no touch_pane");
+          };
+
+          // logo
+          if ( data_state.includes("logo"))
+          {
+            document.getElementById("logo_color").style.left = 3 + "vw";
+            document.getElementById("logo_part_white").style.left = 3 + "vw";
+            document.getElementById("logo_white").style.left = 3 + "vw";
+            console.log("logo");
+          } else {
+            document.getElementById("logo_color").style.left = -12 + "vw";
+            document.getElementById("logo_part_white").style.left = -12 + "vw";
+            document.getElementById("logo_white").style.left = -12 + "vw";
+            console.log("no logo");
+          };
+
+          // yellow strip
+          if ( data_state.includes("yellow_strip"))
+          {
+            document.getElementById("yellow_strip").style.left = 0;
+            console.log("yellow_strip");
+          } else {
+            document.getElementById("yellow_strip").style.left = -10 + "vw";
+            console.log("no yellow_strip");
+          };
+
+          // yellow flag
+          if ( data_state.includes("yellow_flag"))
+          {
+            document.getElementById("yellow_flag").style.left = 0;
+            console.log("yellow_flag");
+          } else {
+            document.getElementById("yellow_flag").style.left = -10 + "vh";
+            console.log("no yellow_flag");
+          };
+
+          // purple half circle top
+          if ( data_state.includes("purple_half_circle_top"))
+          {
+            document.getElementById("purple_half_circle_top").style.top = 0;
+            setLogoStyle("logo_part_white");
+            console.log("purple_half_circle_top");
+          } else {
+            document.getElementById("purple_half_circle_top").style.top = -17 + "vw";
+            console.log("no purple_half_circle_top");
+          };
+
+          // purple half circle bottom
+          if ( data_state.includes("purple_half_circle_bottom"))
+          {
+            document.getElementById("purple_half_circle_bottom").style.bottom = 0;
+            document.getElementById("yellow_flag").style.bottom = 20 + "vh";
+            console.log("purple_half_circle_bottom");
+          } else {
+            document.getElementById("purple_half_circle_bottom").style.bottom = -10 + "vw";
+            document.getElementById("yellow_flag").style.bottom = 5 + "vh";
+            console.log("no purple_half_circle_bottom");
+          };
+
+          // purple strip bottom
+          if ( data_state.includes("purple_strip_bottom"))
+          {
+            document.getElementById("purple_strip_bottom").style.bottom = 0;
+            console.log("purple_strip_bottom");
+          } else {
+            document.getElementById("purple_strip_bottom").style.bottom = -10 + "vw";
+            console.log("no purple_strip_bottom");
+          };
+
+          // yellow_half_strip
+          if ( data_state.includes("yellow_half_strip"))
+          {
+            document.getElementById("yellow_half_strip").style.bottom = 0;
+            console.log("yellow_half_strip");
+          } else {
+            document.getElementById("yellow_half_strip").style.bottom = -25 + "vw";
+            console.log("no yellow_half_strip");
+          };
+
+          // purple blob
+          if ( data_state.includes("purple_blob"))
+          {
+            document.getElementById("purple_blob").style.top = 0;
+            console.log("purple_blob");
+          } else {
+            document.getElementById("purple_blob").style.top = -50 + "vh";
+            console.log("no purple_blob");
+          };
+
+          // right_e
+          if ( data_state.includes("right_e_top"))
+          {
+            document.getElementById("right_e").style.top = 10 + "vh";
+            document.getElementById("right_e").style.right = 0;
+            console.log("right_e_top");
+          } else if ( data_state.includes("right_e_bottom")){
+            document.getElementById("right_e").style.top = 60 + "vh";
+            document.getElementById("right_e").style.right = 0;
+            console.log("right_e_bottom");
+          } else {
+            document.getElementById("right_e").style.right = -4 + "vw";
+            console.log("no right_e");
+          };
+
+          // clear the background so that the overlays don't interfere
+          // with underlying iframe
+          if ( data_state.includes("clear_background"))
+          {
+            document.getElementById("purple_overlay").style.transform = "translateY(100vh)";
+            document.getElementById("white_overlay").style.transform = "translateY(100vh)";
+            document.getElementById("black_overlay").style.transform = "translateY(100vh)";
+            document.getElementById("blue_overlay").style.transform = "translateY(100vh)";
+            document.getElementById("blue_pane_right").style.transform = "translateY(100vh)";
+            document.getElementById("blue_pane_left").style.transform = "translateY(100vh)";
+            document.getElementById("touch_pane").style.transform = "translateY(100vh)";
+          };
+        }
+        else
+        {
+          console.log("nothing special")
+        };
+      };
+
+      function removeDecorations() {
+        console.log("removeDecorations")
+        document.getElementById("purple_overlay").style.opacity = 0;
+        document.getElementById("white_overlay").style.opacity = 0;
+        document.getElementById("black_overlay").style.opacity = 0;
+        document.getElementById("blue_overlay").style.opacity = 0;
+        document.getElementById("blue_pane_right").style.opacity = 0;
+        document.getElementById("blue_pane_left").style.opacity = 0;
+        document.getElementById("touch_pane").style.opacity = 0;
+        document.getElementById("logo_color").style.left = -12 + "vw";
+        document.getElementById("logo_part_white").style.left = -12 + "vw";
+        document.getElementById("logo_white").style.left = -12 + "vw";
+        document.getElementById("yellow_strip").style.left = -10 + "vw";
+        document.getElementById("yellow_flag").style.left = -10 + "vh";
+        document.getElementById("purple_half_circle_top").style.top = -17 + "vw";
+        document.getElementById("purple_half_circle_bottom").style.bottom = -10 + "vw";
+        document.getElementById("purple_strip_bottom").style.bottom = -10 + "vw";
+        document.getElementById("yellow_half_strip").style.bottom = -25 + "vw";
+        document.getElementById("purple_blob").style.top = -50 + "vh";
+        document.getElementById("right_e").style.right = -4 + "vw";
+        document.getElementById("blue_strip").style.right = "-" + document.getElementById("blue_strip").offsetWidth + "px";
+      };
+
+      Reveal.on( 'slidechanged', event => {
+        if (overview_shown == false)
+        {
+          addDecorations();
+        }
+      });
+      Reveal.on( 'overviewshown', event => {
+        overview_shown = true;
+        removeDecorations();
+      });
+      Reveal.on( 'overviewhidden', event => {
+        overview_shown = false;
+        addDecorations();
+      });
+    </script>
+
+  </body>
+</html>
