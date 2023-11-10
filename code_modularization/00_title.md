@@ -10,22 +10,17 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 # Developing Modular Code
 
-===
+---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
 ## What is modularity?
 
 - Software is 'built up' from smaller elements
-<!-- .element: class="fragment" data-fragment-index="3" -->
 - Elements are self-contained and independent
-<!-- .element: class="fragment" data-fragment-index="4" -->
 - Each element handles a specific (set of) task(s)
-<!-- .element: class="fragment" data-fragment-index="5" -->
-
 
 **Simple components** build **complex behavior**.
-<!-- .element: class="fragment" data-fragment-index="6" -->
 
 ---
 
@@ -47,8 +42,7 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 - libraries/packages
 - programs
 
-
-===
+---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
@@ -124,7 +118,6 @@ To create opportunities for innovation:
 
 <img width="800" alt="development speed" src="./files/development-speed.svg">
 
-===
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
@@ -210,7 +203,7 @@ def fahrenheit_to_celsius(temp_f):
 25.0
 ```
 
-===
+---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 

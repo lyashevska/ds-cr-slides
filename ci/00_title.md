@@ -18,9 +18,8 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 # Continuous Integration
 <img src="./files/automate.jpg">
 
+---
 
-
-===
 
 <!-- .slide: data-state="blue_overlay yellow_flag logo" data-background="./files/reload-97640.svg" data-background-size="50%" data-auto-animate data-auto-animate-id="what" -->
 
@@ -126,7 +125,7 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 ## Hands-On
 
-<div style="float: left; width: 60%; margin-bottom: 1em;">
+<div style="float: left; width: 95%; margin-bottom: 1em;">
   <ol>
     <li><strong>Person A: </strong>Ensure your repository has tests</li>
     <li><strong>Person A: </strong>Set up Continuous Integration (automatic testing)</li>
@@ -142,5 +141,4 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 </div>
 <img style="float: right; width: 39%;" src="./files/full-cycle-ci.png">
 
-<a href="https://coderefinery.github.io/testing/full-cycle-ci/">coderefinery.github.io/testing/full-cycle-ci/</a>
 
