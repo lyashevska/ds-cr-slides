@@ -71,7 +71,9 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 Test metrics:
 
 - lines of code : lines of tests (target: 1:3)
-- test coverage [example](https://sonarcloud.io/component_measures?id=eWaterCycle_ewatercycle&metric=coverage&view=treemap&selected=eWaterCycle_ewatercycle%3Aewatercycle)
+- test coverage [example](https://sonarcloud.io/component_measures?id=eWaterCycle_ewatercycle&metric=coverage&view=treemap&selected=eWaterCycle_ewatercycle%3Aewatercycle) (target: >= 80%)
+
+Targets are defined as *necessary*, but *not sufficient* goals.
 
 
 ---
@@ -255,56 +257,6 @@ print(3)
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
-## Impure Functions
-
-<div style="width: 46%; float: left;">
-intuitive...
-<pre style="width: max-content;" data-id="code-animation"><code class="python" style="overflow: hidden;" data-trim data-noescape class="bash" data-line-numbers="1-4|7-8|11-12">
-my_list = []
-&nbsp;
-def append_to_my_list(item):
-    my_list.append(item)
-&nbsp;
-&nbsp;
-def read_data(file_name):
-    return pd.read_csv(file_name)
-&nbsp;
-&nbsp;
-def get_random_number(number):
-    return random.random()
-&nbsp;
-</code></pre>
-</div>
-
-<div class="fragment" style="width: 53%; float: right;">
-... and not so intuitive
-<pre style="width: max-content;" data-id="code-animation"><code class="python" style="overflow: hidden;" data-trim data-noescape class="bash" data-line-numbers="1-2|5-9|5-13">
-def hello(name):
-    print("Hello", name)
-&nbsp;
-&nbsp;
-nums = [1, 2]
-&nbsp;
-def append(a_list, item):
-    a_list += [item]
-    return a_list
-&nbsp;
-print(nums)            # [1, 2]
-print(append(nums, 3)) # [1, 2, 3]
-print(nums)            # [1, 2, 3] 😬</span>
-</code></pre>
-</div>
-
-<ul class="fragment">
-  <li>Side effects are sometimes necessary</li>
-  <li>Some side effects are hard to spot</li>
-</ul>
-
-
----
-
-<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
-
 ## Take-away
 
 - Use pure functions when possible 👌
@@ -313,13 +265,13 @@ print(nums)            # [1, 2, 3] 😬</span>
 - You don't have to strive for 💯% test coverage
 - Aim for a balance between unit- and integration tests ⚖️
 - Testing removes the dread of refactoring 🔁
-- Your future you will thank you 🙏
+- Your future you (and others!) will thank you 🙏
 
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
-## Test-Driven Development: FizzBuzz Function
+# Test-Driven Development: FizzBuzz Function
 
 <div class="r-stack">
   <img src="./files/fizz_buzz_1.svg">
@@ -369,6 +321,6 @@ print(nums)            # [1, 2, 3] 😬</span>
 - What did you think of this style of development?
 - Was it easier or harder than just writing code?
 - Would your code look different without the tests? <!-- .element class="fragment" -->
-- For what kind of projects would it be useful? <!-- .element class="fragment" -->
+- For what kind of projects would it be (not) useful? <!-- .element class="fragment" -->
 
 <div class="fragment" style="width: 20vw; margin: 1em auto;">Test-Driven Development (TDD) is an optional tool in your toolbox 🛠️</div>
