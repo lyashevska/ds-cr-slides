@@ -98,7 +98,7 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 <!-- .slide: data-state="blue_overlay yellow_flag logo 9" data-background="./files/reload-97640.svg" data-background-size="50%" -->
 
-## What Is It Good For? HERE WE GO!
+## What Is It Good For? 
 - Linting
 - Automated testing
 - Security analyses
