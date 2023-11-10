@@ -20,7 +20,7 @@ Note:
 ---
 
 <!-- .slide: data-state="black_overlay logo yellow_flag" data-background="./files/book-wall-g2e1ec5a05_1920.jpg" -->
-<img style="height: 35vh;" src="https://swcarpentry.github.io/git-novice/fig/phd101212s.png"/>
+<img style="height: 70vh;" src="https://swcarpentry.github.io/git-novice/fig/phd101212s.png"/>
 
 <span style="font-size: small;">“Piled Higher and Deeper” by Jorge Cham, http://www.phdcomics.com </span>
 

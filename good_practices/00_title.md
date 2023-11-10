@@ -105,6 +105,7 @@ What's the difference between programming and software engineering?
   <li>Red curve
   <ul>
     <li>Version Control</li>
+    <li>Collaborative development</li>
     <li>Code review</li>
     <li>Testing</li>
     <li>Modular code</li>

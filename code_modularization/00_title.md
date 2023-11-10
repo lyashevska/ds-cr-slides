@@ -130,27 +130,6 @@ To create opportunities for innovation:
 
 ## A good module...
 
-- has a clear interface
-
----
-
-
-<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
-
-<img height="500" alt="Modules with bad interaction" src="./files/modules-bad-connection.png">
-<!-- .element: class="fragment" data-fragment-index="2" -->
-<img width="100" src="./files/whitebg.png">
-
-<img height="500" alt="Modules with clear connecting interfaces" src="./files/modules-good-connection.png">
-<!-- .element: class="fragment" data-fragment-index="3" -->
-
----
-
-<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
-
-## A good module...
-
-- has a clear interface
 - performs limited and clearly defined tasks
 - has a good name
 <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -185,7 +164,6 @@ indexAAG = getIndex(myList,'AAG')
 
 ## A good module...
 
-- has a clear interface
 - performs limited and clearly defined tasks
 - has a good name
 - is readable
@@ -318,10 +296,3 @@ def checkTemperature(degrees):
     - Is the input/output clear?
     - What can you not yet test? Extract it into a new module.
 
-
-===
-
-<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
-
-![]()
-<img height="700" alt="xkcd code lifespan" src="https://imgs.xkcd.com/comics/code_lifespan_2x.png">
