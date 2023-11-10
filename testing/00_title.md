@@ -257,56 +257,6 @@ print(3)
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
-## Impure Functions
-
-<div style="width: 46%; float: left;">
-intuitive...
-<pre style="width: max-content;" data-id="code-animation"><code class="python" style="overflow: hidden;" data-trim data-noescape class="bash" data-line-numbers="1-4|7-8|11-12">
-my_list = []
-&nbsp;
-def append_to_my_list(item):
-    my_list.append(item)
-&nbsp;
-&nbsp;
-def read_data(file_name):
-    return pd.read_csv(file_name)
-&nbsp;
-&nbsp;
-def get_random_number(number):
-    return random.random()
-&nbsp;
-</code></pre>
-</div>
-
-<div class="fragment" style="width: 53%; float: right;">
-... and not so intuitive
-<pre style="width: max-content;" data-id="code-animation"><code class="python" style="overflow: hidden;" data-trim data-noescape class="bash" data-line-numbers="1-2|5-9|5-13">
-def hello(name):
-    print("Hello", name)
-&nbsp;
-&nbsp;
-nums = [1, 2]
-&nbsp;
-def append(a_list, item):
-    a_list += [item]
-    return a_list
-&nbsp;
-print(nums)            # [1, 2]
-print(append(nums, 3)) # [1, 2, 3]
-print(nums)            # [1, 2, 3] 😬</span>
-</code></pre>
-</div>
-
-<ul class="fragment">
-  <li>Side effects are sometimes necessary</li>
-  <li>Some side effects are hard to spot</li>
-</ul>
-
-
----
-
-<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
-
 ## Take-away
 
 - Use pure functions when possible 👌
