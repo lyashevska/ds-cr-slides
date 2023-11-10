@@ -42,7 +42,6 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 ## What are these blocks/elements?
 
 - functions
-- functions
 - classes
 - modules
 - libraries/packages
