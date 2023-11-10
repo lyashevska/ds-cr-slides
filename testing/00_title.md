@@ -71,7 +71,9 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 Test metrics:
 
 - lines of code : lines of tests (target: 1:3)
-- test coverage [example](https://sonarcloud.io/component_measures?id=eWaterCycle_ewatercycle&metric=coverage&view=treemap&selected=eWaterCycle_ewatercycle%3Aewatercycle)
+- test coverage [example](https://sonarcloud.io/component_measures?id=eWaterCycle_ewatercycle&metric=coverage&view=treemap&selected=eWaterCycle_ewatercycle%3Aewatercycle) (target: >= 80%)
+
+Targets are defined as *necessary*, but *not sufficient* goals.
 
 
 ---
