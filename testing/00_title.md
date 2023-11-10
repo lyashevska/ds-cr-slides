@@ -265,13 +265,13 @@ print(3)
 - You don't have to strive for 💯% test coverage
 - Aim for a balance between unit- and integration tests ⚖️
 - Testing removes the dread of refactoring 🔁
-- Your future you will thank you 🙏
+- Your future you (and others!) will thank you 🙏
 
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
-## Test-Driven Development: FizzBuzz Function
+# Test-Driven Development: FizzBuzz Function
 
 <div class="r-stack">
   <img src="./files/fizz_buzz_1.svg">
@@ -321,6 +321,6 @@ print(3)
 - What did you think of this style of development?
 - Was it easier or harder than just writing code?
 - Would your code look different without the tests? <!-- .element class="fragment" -->
-- For what kind of projects would it be useful? <!-- .element class="fragment" -->
+- For what kind of projects would it be (not) useful? <!-- .element class="fragment" -->
 
 <div class="fragment" style="width: 20vw; margin: 1em auto;">Test-Driven Development (TDD) is an optional tool in your toolbox 🛠️</div>
