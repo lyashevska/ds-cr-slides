@@ -104,30 +104,14 @@ What's the difference between programming and software engineering?
   </ul>
   <li>Red curve
   <ul>
-    <li contenteditable="true">...</li>
-    <li contenteditable="true">...</li>
-    <li contenteditable="true">...</li>
-    <li contenteditable="true">...</li>
-    <li contenteditable="true">...</li>
-    <li contenteditable="true">...</li>
+    <li>Version Control</li>
+    <li>Code review</li>
+    <li>Testing</li>
+    <li>Modular code</li>
+    <li>Documentation</li>
   </ul>
 </ul>
 </div>
-
-Note:
-- deleted wrong function
-- need to onboard collaborators
-- a new feature broke stuff
-- need to rewrite
-- need to teach users
-<br>
-<br>
-- GitHub
-- Version control
-- Modular coding
-- Documentation
-- Code reviews
-- Testing
 
 ---
 
@@ -135,7 +119,7 @@ Note:
 
 ## Projects are Different
 
-<img style="height: 30vh;" src="./files/branching.png"/>
+<img style="height: 70vh;" src="./files/branching.png"/>
 
 ---
 
@@ -188,7 +172,7 @@ Note:
     </tr>
     <tr>
       <td>2+ (+external)</td>
-      <td class="fragment" data-fragment-index="9">release branch, <br>&amp; everything else</td>
+      <td class="fragment" data-fragment-index="9">Release branch, <br>&amp; everything else</td>
     </tr>
   </table>
 </div>
