@@ -98,11 +98,11 @@ What's the difference between programming and software engineering?
 
 <div style="float: left;">
 <ul>
-  <li>Blue curve
+  <li>Red curve
   <ul>
     <li>Writing code</li>
   </ul>
-  <li>Red curve
+  <li>Blue curve
   <ul>
     <li>Version Control</li>
     <li>Collaborative development</li>
