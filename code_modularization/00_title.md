@@ -67,6 +67,7 @@ To make maintenance easier:
 
 - Modular code is more readable and understandable.
 - Modules can be debugged separately.
+- Modules only need to be improved/optimized once.
 
 ---
 
@@ -115,6 +116,9 @@ To create opportunities for innovation:
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
+## Why write modular code?
+
+To speed up software development:
 
 <img width="800" alt="development speed" src="./files/development-speed.svg">
 
@@ -288,4 +292,3 @@ def checkTemperature(degrees):
 - Use the test-writing procedure to look critically at the module's function:
     - Is the input/output clear?
     - What can you not yet test? Extract it into a new module.
-
