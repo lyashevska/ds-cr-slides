@@ -174,7 +174,7 @@ indexAAG = [n for n,i in enumerate(myList) if i == 'AAG']
 More modular:
 ```python=
 def getIndex(inputList,z):
-    zIndex = [n for n,i in enumerate(li) if i == z]
+    zIndex = [n for n,i in enumerate(inputList) if i == z]
     return zIndex
 
 indexATG = getIndex(myList,'ATG')
@@ -196,18 +196,20 @@ indexAAG = getIndex(myList,'AAG')
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
-## A pure function
+## A pure (stateless) function
 
-has no side-effects:
+always gives the same result:
 
 ```python=
-def fahrenheit_to_celsius(temp_f):
-    temp_c = (temp_f - 32.0) * (5.0/9.0)
-    return temp_c
+def add_to_list(item, some_list=None):
+    if some_list is None:
+        some_list = []
+    some_list.append(item)
+    return some_list
 
->>> temp_c = fahrenheit_to_celsius(temp_f=77.0)
->>> print(temp_c)
-25.0
+
+l1 = add_to_list(0)  # [0]
+l2 = add_to_list(0)  # [0]
 ```
 
 ---
@@ -216,21 +218,15 @@ def fahrenheit_to_celsius(temp_f):
 
 ## A stateful function
 
-changes its environment:
+changes the environment it lives in:
 
 ```python=
-def fahrenheit_to_celsius(temp_f):
-    global temp_c
-    temp_c = (temp_f - f_to_c_offset) * f_to_c_factor
+def add_to_list(item, some_list=[]):
+    some_list.append(item)
+    return some_list
 
->>> f_to_c_offset = 32.0
->>> f_to_c_factor = (5.0/9.0)
->>> temp_c = 0.0
->>> print(temp_c)
-0.0
->>> fahrenheit_to_celsius(temp_f=77.0)
->>> print(temp_c)
-25.0
+l1 = add_to_list(0)  # [0]
+l2 = add_to_list(0)  # [0, 0]
 ```
 
 ---
