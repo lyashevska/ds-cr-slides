@@ -190,43 +190,68 @@ indexAAG = getIndex(myList,'AAG')
 - performs limited and clearly defined tasks
 - has a good name
 - is readable
-- is pure/does not have a 'state'
+- is pure and predictable
 
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
-## A pure (stateless) function
+## An impure function...
 
-always gives the same result:
+does not always give the same result:
 
 ```python=
-def add_to_list(item, some_list=None):
-    if some_list is None:
-        some_list = []
-    some_list.append(item)
-    return some_list
+def fahrenheit_to_celsius(temp_list, conversions=[]):
+    for temp in temp_list:
+        temp_c = (temp - 32.0) * (5.0/9.0)
+        conversions.append(temp_c)
+    
+    return conversions
 
-
-l1 = add_to_list(0)  # [0]
-l2 = add_to_list(0)  # [0]
+>>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
+>>> fahrenheit_to_celsius([32.0, 77.0])
 ```
 
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
-## A stateful function
+## An impure function...
 
-changes the environment it lives in:
+does not always give the same result:
 
 ```python=
-def add_to_list(item, some_list=[]):
-    some_list.append(item)
-    return some_list
+def fahrenheit_to_celsius(temp_list, conversions=[]):
+    for temp in temp_list:
+        temp_c = (temp - 32.0) * (5.0/9.0)
+        conversions.append(temp_c)
+    
+    return conversions
 
-l1 = add_to_list(0)  # [0]
-l2 = add_to_list(0)  # [0, 0]
+>>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
+>>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0, 0.0, 25.0]
+```
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
+
+## A pure function...
+
+always gives the same result:
+
+```python=
+def fahrenheit_to_celsius(temp_list, conversions=None):
+    if conversions == None:
+        conversions = []
+    for temp in temp_list:
+        temp_c = (temp - 32.0) * (5.0/9.0)
+        conversions.append(temp_c)
+    
+    return conversions
+
+>>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
+>>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
 ```
 
 ---
