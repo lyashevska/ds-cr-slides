@@ -122,7 +122,33 @@ To speed up software development:
 
 <img width="800" alt="development speed" src="./files/development-speed.svg">
 
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
+## A good module...
+
+- performs limited and clearly defined tasks
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
+
+## A good module...
+
+- performs limited and clearly defined tasks
+- has a good name
+<!-- .element: class="fragment" data-fragment-index="2" -->
+
+ 
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
+
+## Naming your module
+
+- focus on human intelligibility
+- be descriptive and clear
+- don't use abbreviations
+- follow language specific conventions
+
+<img height="600" alt="naming" src="./files/naming_stuff.jpg">
+
+---
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
 ## A good module...
