@@ -120,13 +120,17 @@ To create opportunities for innovation:
 
 To speed up software development:
 
-<img width="800" alt="development speed" src="./files/development-speed.svg">
+<img width="600" alt="development speed" src="./files/development-speed.svg">
+
+---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
 ## A good module...
 
 - performs limited and clearly defined tasks
+
+---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
@@ -134,9 +138,16 @@ To speed up software development:
 
 - performs limited and clearly defined tasks
 - has a good name
+
+---
+
 <!-- .element: class="fragment" data-fragment-index="2" -->
 
+## A good module...
  
+- performs limited and clearly defined tasks
+- has a good name
+
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
 ## Naming your module
