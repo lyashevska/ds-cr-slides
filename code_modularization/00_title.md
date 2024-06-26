@@ -142,13 +142,28 @@ indexAAG = [n for n,i in enumerate(myList) if i == 'AAG']
 ```
 
 More modular:
-```python=
-def getIndex(inputList,z):
-    zIndex = [n for n,i in enumerate(li) if i == z]
-    return zIndex
 
-indexATG = getIndex(myList,'ATG')
-indexAAG = getIndex(myList,'AAG')
+```python
+def get_index(input_list, target):
+    """
+    Returns the indices of all occurrences of target in input_list.
+
+    Args:
+        input_list (list): The list to search through.
+        target (any): The element to find in the list.
+
+    Returns:
+        list: A list of indices where the target is found.
+    """
+    return [index for index, value in enumerate(input_list) if value == target]
+
+# Example usage
+my_list = ['ATG', 'AAG', 'ATG', 'AAG', 'ATG']
+index_atg = get_index(my_list, 'ATG')
+index_aag = get_index(my_list, 'AAG')
+
+print("Indices of 'ATG':", index_atg)
+print("Indices of 'AAG':", index_aag)
 ```
 
 ---
@@ -236,20 +251,30 @@ def fahrenheit_to_celsius(temp_f):
 
 ## Target nested code
 
-Nested code is a prime target for modularization:
+Nested code is a prime target for modularization (note: removed nested if-statements by using elif to avoid deep nesting):
 
 ```python=
-def checkTemperature(degrees):
-    if degrees < 0:
-        if degrees < -273:
-            if degrees < -459:
-                print("This temperature is impossible.")
-            else:
-                print("This temperature is likely Fahrenheit.")
-        else:
-            print("This temperature is either Celsius or Fahrenheit.")
+def check_temperature(degrees):
+    """
+    Prints a message indicating the likely scale of the given temperature.
+    
+    Args:
+    degrees (float): The temperature to check.
+    """
+    if degrees < -459:
+        print("This temperature is impossible.")
+    elif degrees < -273:
+        print("This temperature is likely Fahrenheit.")
+    elif degrees < 0:
+        print("This temperature is either Celsius or Fahrenheit.")
     else:
-        print("This temperature is in Kelvin, Celsius, or Fahrhenheit.")
+        print("This temperature is in Kelvin, Celsius, or Fahrenheit.")
+
+# Example usage
+check_temperature(-50)
+check_temperature(300)
+check_temperature(-100)
+check_temperature(5)
 ```
 
 ---
@@ -261,21 +286,37 @@ def checkTemperature(degrees):
 by extracting modules:
 
 ```python=
-def validTemp(degrees):
-    if degrees < -459:
-        return FALSE
-    return TRUE
+def is_valid_temperature(degrees):
+    """
+    Checks if the given temperature is above absolute zero.
+    Args:
+    degrees (float): The temperature to check.
+    Returns:
+    bool: True if the temperature is valid, False otherwise.
+    """
+    return degrees >= -459
 
-def checkTemperature(degrees):
-    if not validTemp(degrees):
-        return "invalid temperature"
-    if degrees < 0:
-        if degrees < -273:
-            print("This temperature is likely Fahrenheit.")
-        else:
-            print("This temperature is either Celsius or Fahrenheit.")
+def check_temperature(degrees):
+    """
+    Prints a message indicating the likely scale of the given temperature.
+    Args:
+    degrees (float): The temperature to check.
+    """
+    if not is_valid_temperature(degrees):
+        return "Invalid temperature"
+    
+    if degrees < -273:
+        print("This temperature is likely Fahrenheit.")
+    elif degrees < 0:
+        print("This temperature is either Celsius or Fahrenheit.")
     else:
-        print("This temperature is in Kelvin, Celsius, or Fahrhenheit.")
+        print("This temperature is in Kelvin, Celsius, or Fahrenheit.")
+
+# Example usage
+print(check_temperature(-500))  # Should return "Invalid temperature"
+check_temperature(-305)         # Should print "This temperature is likely Fahrenheit."
+check_temperature(-150)         # Should print "This temperature is either Celsius or Fahrenheit."
+check_temperature(5)           # Should print "This temperature is in Kelvin, Celsius, or Fahrenheit."
 ```
 
 ---
