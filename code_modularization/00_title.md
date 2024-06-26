@@ -235,11 +235,13 @@ l2 = add_to_list(0)  # [0, 0]
 
 ## Identifying opportunities for modularization
 
+- poor readability
+
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
-## Focus on readability
+## Readable code
 
 - Modular code becomes more readable
 - Code is read more than it is written
@@ -250,11 +252,30 @@ l2 = add_to_list(0)  # [0, 0]
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
-## Identify future functions
+## Identifying opportunities for modularization
+
+- poor readability
+- functional units
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
+
+## Identify functional units
 
 - Don't Repeat Yourself (DRY): place reused code into a function
 - Identify potential functions by their _action_
-    (e.g. "plotting", "transforming", "extracting", "saving")
+    (e.g. "plot", "transform", "extract", "save")
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
+
+## Identifying opportunities for modularization
+
+- poor readability
+- functional units
+- nested code
 
 ---
 
@@ -265,17 +286,16 @@ l2 = add_to_list(0)  # [0, 0]
 Nested code is a prime target for modularization:
 
 ```python=
-def checkTemperature(degrees):
-    if degrees < 0:
-        if degrees < -273:
-            if degrees < -459:
-                print("This temperature is impossible.")
-            else:
-                print("This temperature is likely Fahrenheit.")
-        else:
-            print("This temperature is either Celsius or Fahrenheit.")
-    else:
-        print("This temperature is in Kelvin, Celsius, or Fahrhenheit.")
+def sum_even_numbers(bottom, top):
+    if top > bottom:
+        sum = 0
+        for x in range(bottom, top):
+            if x % 2 == 0:
+                sum += x
+        return sum
+    return 0
+
+sum_even_numbers(2, 14)  # 42
 ```
 
 ---
@@ -287,21 +307,21 @@ def checkTemperature(degrees):
 by extracting modules:
 
 ```python=
-def validTemp(degrees):
-    if degrees < -459:
-        return FALSE
-    return TRUE
+def _filter_even(number):
+    if number % 2 == 0:
+        return number
+    return 0
 
-def checkTemperature(degrees):
-    if not validTemp(degrees):
-        return "invalid temperature"
-    if degrees < 0:
-        if degrees < -273:
-            print("This temperature is likely Fahrenheit.")
-        else:
-            print("This temperature is either Celsius or Fahrenheit.")
-    else:
-        print("This temperature is in Kelvin, Celsius, or Fahrhenheit.")
+def sum_even_numbers(bottom, top):
+    if top < bottom:
+        return 0
+    
+    sum = 0
+    for x in range(bottom, top):
+        sum += _filter_even(x)
+    return sum
+
+sum_even_numbers (2,14)  # 42
 ```
 
 ---
