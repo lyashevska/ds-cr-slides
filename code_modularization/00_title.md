@@ -1,8 +1,8 @@
 <!--
 title: Code Modularization
 description: Writing Modular Code
-author: Barbara Vreede, Ole Mussmann
-version: 4.3.1
+author: Barbara Vreede, Ole Mussmann, Dani Bodor
+version: 4.4.0
 plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, RevealMenu, RevealNotes, RevealSearch, RevealZoom
 -->
 
@@ -16,11 +16,14 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 ## What is modularity?
 
-- Software is 'built up' from smaller elements
-- Elements are self-contained and independent
-- Each element handles a specific (set of) task(s)
-
-**Simple components** build **complex behavior**.
+Simple components combined to produce complex behavior.
+<!-- .element: class="fragment" data-fragment-index="2" -->
+- Software can be 'built up' from smaller elements.
+<!-- .element: class="fragment" data-fragment-index="3" -->
+- Elements are self-contained and independent.
+<!-- .element: class="fragment" data-fragment-index="4" -->
+- Each element handles a specific (set of) task(s).
+<!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
 
@@ -41,6 +44,7 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 - modules
 - libraries/packages
 - programs
+- ...
 
 ---
 
@@ -48,7 +52,7 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 ## Why write modular code?
 
-To increase robustness:
+To increase robustness
 
 <img width="200" alt="testing a single module" src="./files/testing_module.png">
 
@@ -67,6 +71,7 @@ To make maintenance easier:
 
 - Modular code is more readable and understandable.
 - Modules can be debugged separately.
+- Modules only need to be improved/optimized once.
 
 ---
 
@@ -78,8 +83,8 @@ To allow reusability:
 
 <img width="400" alt="reuse a module in another project" src="./files/reuse_module.png">
 
-- A module can live independent of its original context
-- It can be reused by another project
+- A module can live independent of its original context.
+- It can be reused by another project.
 
 ---
 
@@ -94,8 +99,8 @@ To facilitate scalability:
 
 <div>
 
-- Complexity remains low by design
-- This creates space for scaling up
+- Complexity remains low by design.
+- This creates space for scaling up.
 
 </div>
 
@@ -109,15 +114,43 @@ To create opportunities for innovation:
 
 <img height="300" alt="tetris shows innovation" src="./files/tetris_innovation.png">
 
-- Modules increase the capabilities and power of a project
-- Rearrange old modules for new applications
+- Modules increase the capabilities and power of a project.
+- Rearrange old modules for new applications.
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
+## Why write modular code?
+
+To save time:
+
+<img width="600" alt="development speed" src="./files/development-speed.svg">
 
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
-<img width="800" alt="development speed" src="./files/development-speed.svg">
+## A good module...
 
+- performs limited and clearly defined tasks
+<!-- .element: class="fragment" data-fragment-index="2" -->
+- has a good name
+<!-- .element: class="fragment" data-fragment-index="3" -->
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
+
+## Naming your module
+
+- focus on human intelligibility
+- be descriptive and clear
+- don't use abbreviations
+- follow language specific conventions
+
+<img height="350" alt="naming" src="./files/naming_stuff.jpg">
+
+---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
@@ -125,15 +158,14 @@ To create opportunities for innovation:
 
 - performs limited and clearly defined tasks
 - has a good name
-<!-- .element: class="fragment" data-fragment-index="2" -->
 - is readable
-<!-- .element: class="fragment" data-fragment-index="3" -->
+<!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
-## Readability =/= shorter code
+## More readable != shorter code
 
 Shorter:
 ```python=
@@ -142,14 +174,16 @@ indexAAG = [n for n,i in enumerate(myList) if i == 'AAG']
 ```
 
 More modular:
+<!-- .element: class="fragment" data-fragment-index="2" -->
 ```python=
 def getIndex(inputList,z):
-    zIndex = [n for n,i in enumerate(li) if i == z]
+    zIndex = [n for n,i in enumerate(inputList) if i == z]
     return zIndex
 
 indexATG = getIndex(myList,'ATG')
 indexAAG = getIndex(myList,'AAG')
 ```
+<!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
@@ -160,47 +194,56 @@ indexAAG = getIndex(myList,'AAG')
 - performs limited and clearly defined tasks
 - has a good name
 - is readable
-- is pure/does not have a 'state'
+- is pure and predictable
+<!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
-## A pure function
+## An impure function...
 
-has no side-effects:
+... does not always give the same result:
 
 ```python=
-def fahrenheit_to_celsius(temp_f):
-    temp_c = (temp_f - 32.0) * (5.0/9.0)
-    return temp_c
+def fahrenheit_to_celsius(temp_list, conversions=[]):
+    for temp in temp_list:
+        temp_c = (temp - 32.0) * (5.0/9.0)
+        conversions.append(temp_c)
+    
+    return conversions
 
->>> temp_c = fahrenheit_to_celsius(temp_f=77.0)
->>> print(temp_c)
-25.0
+>>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
 ```
 
+**Q: What will happen when we call the function a second time?**
+<!-- .element: class="fragment" data-fragment-index="2" -->
+
+```python=
+>>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0, 0.0, 25.0]
+```
+<!-- .element: class="fragment" data-fragment-index="3" -->
+
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
-## A stateful function
+## A pure function...
 
-changes its environment:
+... always gives the same result:
 
 ```python=
-def fahrenheit_to_celsius(temp_f):
-    global temp_c
-    temp_c = (temp_f - f_to_c_offset) * f_to_c_factor
+def fahrenheit_to_celsius(temp_list, conversions=None):
+    if conversions == None:
+        conversions = []
+    for temp in temp_list:
+        temp_c = (temp - 32.0) * (5.0/9.0)
+        conversions.append(temp_c)
+    
+    return conversions
 
->>> f_to_c_offset = 32.0
->>> f_to_c_factor = (5.0/9.0)
->>> temp_c = 0.0
->>> print(temp_c)
-0.0
->>> fahrenheit_to_celsius(temp_f=77.0)
->>> print(temp_c)
-25.0
+>>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
+>>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
 ```
 
 ---
@@ -209,26 +252,54 @@ def fahrenheit_to_celsius(temp_f):
 
 ## Identifying opportunities for modularization
 
+- poor readability
+<!-- .element: class="fragment" data-fragment-index="2" -->
+
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
-## Focus on readability
+## Readable code
 
-- Modular code becomes more readable
+Modular code becomes more readable
+
 - Code is read more than it is written
+<!-- .element: class="fragment" data-fragment-index="2" -->
 - Does a reader understand what the code does?
+<!-- .element: class="fragment" data-fragment-index="3" -->
 - Bad readability can be a "code smell"
+<!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
-## Identify future functions
+## Identifying opportunities for modularization
+
+- poor readability
+- functional units
+<!-- .element: class="fragment" data-fragment-index="2" -->
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
+
+## Identify functional units
 
 - Don't Repeat Yourself (DRY): place reused code into a function
 - Identify potential functions by their _action_
-    (e.g. "plotting", "transforming", "extracting", "saving")
+    (e.g. "plot", "transform", "extract", "save")
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
+
+## Identifying opportunities for modularization
+
+- poor readability
+- functional units
+- nested code
+<!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
@@ -239,43 +310,42 @@ def fahrenheit_to_celsius(temp_f):
 Nested code is a prime target for modularization:
 
 ```python=
-def checkTemperature(degrees):
-    if degrees < 0:
-        if degrees < -273:
-            if degrees < -459:
-                print("This temperature is impossible.")
-            else:
-                print("This temperature is likely Fahrenheit.")
-        else:
-            print("This temperature is either Celsius or Fahrenheit.")
-    else:
-        print("This temperature is in Kelvin, Celsius, or Fahrhenheit.")
+def sum_even_numbers(bottom, top):
+    if top > bottom:
+        sum = 0
+        for x in range(bottom, top):
+            if x % 2 == 0:
+                sum += x
+        return sum
+    return 0
+
+sum_even_numbers(2, 14)  # 42
 ```
 
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
-## Reduce nestedness
+## Reduce nestedness...
 
-by extracting modules:
+... by extracting modules:
 
 ```python=
-def validTemp(degrees):
-    if degrees < -459:
-        return FALSE
-    return TRUE
+def _filter_even(number):
+    if number % 2 == 0:
+        return number
+    return 0
 
-def checkTemperature(degrees):
-    if not validTemp(degrees):
-        return "invalid temperature"
-    if degrees < 0:
-        if degrees < -273:
-            print("This temperature is likely Fahrenheit.")
-        else:
-            print("This temperature is either Celsius or Fahrenheit.")
-    else:
-        print("This temperature is in Kelvin, Celsius, or Fahrhenheit.")
+def sum_even_numbers(bottom, top):
+    if top < bottom:
+        return 0
+    
+    sum = 0
+    for x in range(bottom, top):
+        sum += _filter_even(x)
+    return sum
+
+sum_even_numbers (2,14)  # 42
 ```
 
 ---
@@ -285,7 +355,10 @@ def checkTemperature(degrees):
 ## Let tests help you
 
 - Write tests for each individual module
+<!-- .element: class="fragment" data-fragment-index="2" -->
 - Use the test-writing procedure to look critically at the module's function:
+<!-- .element: class="fragment" data-fragment-index="3" -->
     - Is the input/output clear?
+<!-- .element: class="fragment" data-fragment-index="3" -->
     - What can you not yet test? Extract it into a new module.
-
+<!-- .element: class="fragment" data-fragment-index="3" -->
