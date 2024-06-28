@@ -74,8 +74,8 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 <div class="blockquote-wrapper fragment">
   <div class="blockquote">
-     It is the practice of integrating changes to a project made by individuals into a main, shared version frequently.
-    <h4>&mdash;https://book.the-turing-way.org</h4>
+     Means keeping the main (shared) version of a project up to date via frequent or automated integration of changes.
+    <h4>&mdash;</h4>
   </div>
 </div>
 
@@ -104,10 +104,11 @@ Allows to identify any conflicts and bugs that are introduced by changes, so the
 
 ## What else can CI do?
 - Building & compiling
-- Documentation, ...
+  - Code, Documentation, ...
 - Deploying (PyPi, Kubernetes, GitHub Pages)
   - Just like these slides
-- Linting (analyze code for potential errors)
+- Code analysis
+    - linting (style conventions), formatting, quality metrics, ...
 - Security analyses
 - Send messages
   - Slack, Discord, Matrix, Mastodon, email, ...
@@ -118,7 +119,7 @@ Allows to identify any conflicts and bugs that are introduced by changes, so the
 
 <!-- .slide: data-state="blue_overlay yellow_flag logo 9" data-background="./files/reload-97640.svg" data-background-size="50%" -->
 
-## CI service providors
+## CI service providers
 
 - GitHub Actions
 - GitLab CI
@@ -157,6 +158,6 @@ Allows to identify any conflicts and bugs that are introduced by changes, so the
     <li><strong>Person A: </strong>Accept Person B's pull request</li>
   </ol>
 </div>
-<img style="float: right; width: 39%;" src="./files/full-cycle-ci.png">
+<img style="float: right; width: 35%;" src="./files/full-cycle-ci.png">
 
 
