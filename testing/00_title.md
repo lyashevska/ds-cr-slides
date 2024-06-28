@@ -156,124 +156,152 @@ Q: Can you think of a problem that will not be caught?
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
-# PyTest
 
-- recommended python testing framework
-- [docs.pytest.org](https://docs.pytest.org/en/7.3.x/)
+## Writing a test file
 
----
-
-<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
-
-## Write Code
-
+Create a file called test_example.py ...
 <pre><code class="bash" style="overflow: hidden;" data-trim class="bash" data-line-numbers>
 $ mkdir pytest-example
 $ cd pytest-example
+$ nano test_example.py
 </code></pre>
 
 <div class="fragment">
-Creating a file <code>example.py</code> containing
+... and add the function and tests from before:
 <pre><code class="python" style="overflow: hidden;" data-trim class="bash" data-line-numbers>
-def add(a, b):
-    return a + b
+def fahrenheit_to_celsius(temp_list, converted_temps=[]):
+    for temp in temp_list:
+        temp_c = (temp - 32.0) * (5.0/9.0)
+        converted_temps.append(temp_c)
+    return converted_temps
 &nbsp;
 &nbsp;
-def test_add():  # Special name!
-    assert add(2, 3) == 5  # What's `assert`? 🤔
-    assert add('space', 'ship') == 'spaceship'
+def test_convert():  # Special name!
+    assert fahrenheit_to_celsius([32.0, 77.0]) == [0.0, 25.0]
+    assert (fahrenheit_to_celsius([100], converted_temps = [0.0, 25.0])
+            == [0.0, 25.0, 37.77777777777778])
 </code></pre>
-</div>
-
-<div class="fragment">
-Chat with the python shell about <code>assert</code> ...
-</div>
-<div class="fragment">
-<pre><code class="python" style="overflow: hidden;" data-trim class="bash" data-line-numbers>
->>> assert 1==1  # passes
->>> assert 1==2  # throws error
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-AssertionError
-</code></pre>
-
 </div>
 
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
-## Test!
+## Using pytest to run tests in Python
 
-<pre><code style="overflow: hidden;" data-trim class="bash" data-line-numbers="1|1-9">
-$ pytest example.py
+[Pytest](https://docs.pytest.org/en/7.3.x/) is the recommended python testing framework
+
+<pre class="fragment"><code style="overflow: hidden;" data-trim class="bash" data-line-numbers="1|1-9">
+$ pytest
 ======================== test session starts ========================
 platform linux -- Python 3.6.9, pytest-7.0.1, pluggy-1.0.0
 rootdir: /home/ole/Desktop/pytest-texample
 collected 1 item
 
-example.py .                                                  [100%]
+test_example.py .                                                  [100%]
 
 ========================= 1 passed in 0.00s =========================
 </code></pre>
 
+The `pytest` command will run all functions starting with "test_" from all files starting with "test_".
+<!-- .element: class="fragment" -->
+
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
-## Breaking Things
+## Pytest Excercise
 
+1. Add a test to catch "problematic" behavior of the function.
+    - don't fix the function (yet)
+2. Run pytest to see what the response looks like. 
+    - what information can you gather from the response?
+3. Fix the function and rerun the test
+
+<div>
 <pre><code class="python" style="overflow: hidden;" data-trim class="bash" data-line-numbers>
-def add(a, b):
-    return a - b  # Uh oh, mistake! 😱
-
-
-def test_add():
-    assert add(2, 3) == 5
-    assert add('space', 'ship') == 'spaceship'
+def fahrenheit_to_celsius(temp_list, converted_temps=[]):
+    for temp in temp_list:
+        temp_c = (temp - 32.0) * (5.0/9.0)
+        converted_temps.append(temp_c)
+    return converted_temps
+&nbsp;
+&nbsp;
+def test_convert():
+    assert fahrenheit_to_celsius([32.0, 77.0]) == [0.0, 25.0]
+    assert (fahrenheit_to_celsius([100], converted_temps = [0.0, 25.0])
+            == [0.0, 25.0, 37.77777777777778])
 </code></pre>
+</div>
 
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
-## Testing Again
+## Breaking the test 
 
-<pre><code style="overflow: hidden;" data-trim class="bash" data-line-numbers="1|2-8|9-17|18-20">
+1. Add a test to catch problematic behavior of the function.
+
+<div class="fragment">
+<pre><code class="python" style="overflow: hidden;" data-trim class="bash" data-line-numbers="1-11|12">
+def fahrenheit_to_celsius(temp_list, converted_temps=[]):
+    for temp in temp_list:
+        temp_c = (temp - 32.0) * (5.0/9.0)
+        converted_temps.append(temp_c)
+    return converted_temps
+&nbsp;
+&nbsp;
+def test_convert():
+    assert fahrenheit_to_celsius([32.0, 77.0]) == [0.0, 25.0]
+    assert (fahrenheit_to_celsius([100], converted_temps = [0.0, 25.0])
+            == [0.0, 25.0, 37.77777777777778])
+    assert fahrenheit_to_celsius([32.0, 77.0]) == [0.0, 25.0]
+</code></pre>
+</div>
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+## Failing tests
+
+<pre style="width: 100%; max-width: 1200px; overflow: auto;"><code style="overflow: hidden;" data-trim class="bash" data-line-numbers="1|2-8|9-22|23-26">
 $ pytest example.py
 ======================== test session starts =========================
 platform linux -- Python 3.6.9, pytest-7.0.1, pluggy-1.0.0
 rootdir: /home/ole/Desktop/pytest-texample
 collected 1 item
 
-example.py F                                                   [100%]
+test_example.py F                                                   [100%]
 
 ============================== FAILURES ==============================
-______________________________ test_add ______________________________
+______________________________ test_convert ______________________________
 
-    def test_add():
->       assert add(2, 3) == 5
-E       assert -1 == 5
-E        +  where -1 = add(2, 3)
+    def test_convert():  # Special name!
+        assert fahrenheit_to_celsius([32.0, 77.0]) == [0.0, 25.0]
+        assert (fahrenheit_to_celsius([100], converted_temps = [0.0, 25.0])
+                == [0.0, 25.0, 37.77777777777778])
+>       assert fahrenheit_to_celsius([32.0, 77.0]) == [0.0, 25.0]
+E       assert [0.0, 25.0, 0.0, 25.0] == [0.0, 25.0]
+E         
+E         Left contains 2 more items, first extra item: 0.0
+E         Use -v to get more diff
 
-example.py:6: AssertionError
-====================== short test summary info =======================
-FAILED example.py::test_add - assert -1 == 5
-========================= 1 failed in 0.05s ==========================
+test_example.py:11: AssertionError
+============================= short test summary info =============================
+FAILED test_example.py::test_convert - assert [0.0, 25.0, 0.0, 25.0] == [0.0, 25.0]
+================================ 1 failed in 0.67s ================================
+&nbsp;
 </code></pre>
-
-<ul>
-  <li class="fragment">🚀❓<span class="fragment">Functions fail on first error</span></li>
-  <li class="fragment">But all test functions are executed</li>
-</ul>
 
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
-## Take-away
+## Pytest wrap up
 
-- pytest collects and runs all test functions starting with <code>test_</code>
+- pytest collects all files starting <code>test_</code>...
+- ... and runs all test functions starting with <code>test_</code>
 - The tests pass when they do not throw (assertion) errors
 
 <pre style="width: max-content;"><code style="overflow: hidden;" class="python" data-trim class="bash" data-line-numbers>
@@ -289,43 +317,6 @@ def test_steal_sheep():
 def test_paint_cows():
     ...
 </code></pre>
-
-
----
-
-<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
-
-# Recap: pure functions
-
-<div style="width: 59%; float: left;">
-<ul style="margin-top: 1ex;">
-  <li>Are deterministic</li>
-  <li>Have a return value</li>
-  <li>Have no side effects<sup>[1]</sup></li>
-  <li>Have referential transparency<sup>[2]</sup></li>
-<ul>
-</div>
-
-<div style="width: 39%; float: right;">
-<pre class="fragment" style="width: max-content;" data-id="code-animation"><code class="python" style="overflow: hidden; padding-left: 1em; padding-right: 1em;" data-trim data-noescape class="bash" data-line-numbers="1-2|1-6|4-8">
-def last(my_array):
-    return my_array[-1]
-&nbsp;
-def add(a, b):
-    return a + b
-&nbsp;
-print(add(1, 2))
-print(3)
-</code></pre>
-</div>
-
-<h4 class="fragment" style="width: 100%; float: left; margin-top: 1em;">Pure functions are easy to understand and test!</h4>
-
-<footer>
-[1] Side effects: interactions of a function with its surroundings
-<br>
-[2] Replacing a function call with the return of that function should not change anything
-</footer>
 
 ---
 
