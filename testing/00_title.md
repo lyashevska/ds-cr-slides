@@ -325,9 +325,12 @@ def test_paint_cows():
 ## Take-away
 
 - Use pure functions when possible 👌
+  - Do you remember what these are? 💭
 - Testing does not have to be hard 👏
-  - You test anyways, but then throw the test away 🧐
+  - You often test anyway, but then throw the test away 🧐
+  - Use pytest if programming with Python 🎭
 - You don't have to strive for 💯% test coverage
+  - But be smart about what you ar testing 🧠
 - Aim for a balance between unit- and integration tests ⚖️
 - Testing removes the dread of refactoring 🔁
 - Your future you (and others!) will thank you 🙏
