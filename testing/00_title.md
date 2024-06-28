@@ -97,15 +97,60 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
 
-## How much testing is enough?
+## Testing metrics
 
-Test metrics:
+#### Targets are arbitrary and indicative of but do not guarantee strong testing.
 
-- lines of code : lines of tests (target: 1:3)
-- test coverage [example](https://sonarcloud.io/component_measures?id=eWaterCycle_ewatercycle&metric=coverage&view=treemap&selected=eWaterCycle_ewatercycle%3Aewatercycle) (target: >= 80%)
+<div style="display: flex; justify-content: center; align-items: center">
+  <div>
+    <ul>
+      <li class="fragment fade-up">Coverage
+        <ul>
+          <li>Proportion of code that is executed</li>
+          <li>Target >= 80%</li>
+        </ul>
+      </li>
+      <li class="fragment fade-up">Ratio (lines of code:lines of test)
+        <ul>
+          <li>Target: (1:3)</li>
+        </ul>
+      </li>
+      <li class="fragment fade-up">Metrics can be misleading
+        <ul>
+          <li>They do not measure quality</li>
+          <li>Don't get blindsided by hitting targets over writing good tests</li>
+  </div>
+  <img src="./files/metrics.jpg" width="300" style="margin-left: 60px">
+</div>
 
-Targets are defined as *necessary*, but *not sufficient* goals.
+  
 
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
+## Misleading metrics
+
+Consider this function...
+```python
+def fahrenheit_to_celsius(temp_list, converted_temps=[]):
+    for temp in temp_list:
+        temp_c = (temp - 32.0) * (5.0/9.0)
+        converted_temps.append(temp_c)
+    return converted_temps
+```
+
+...and these tests with 100% coverage:
+<!-- .element: class="fragment" data-fragment-index="2" -->
+```python
+assert fahrenheit_to_celsius([32.0, 77.0]) == [0.0, 25.0]
+assert (fahrenheit_to_celsius([100], converted_temps = [0.0, 25.0])
+        == [0.0, 25.0, 37.77777777777778])
+```
+<!-- .element: class="fragment" data-fragment-index="2" -->
+
+Q: Can you think of a problem that will not be caught?
+<!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
@@ -115,8 +160,6 @@ Targets are defined as *necessary*, but *not sufficient* goals.
 
 - recommended python testing framework
 - [docs.pytest.org](https://docs.pytest.org/en/7.3.x/)
-
-![](.files/pytest_logo.svg)
 
 ---
 
