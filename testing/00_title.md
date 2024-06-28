@@ -15,6 +15,30 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
+## Basics of testing
+
+### Mistakes *will* happen!
+
+
+<div style="display: flex; justify-content: center; align-items: center">
+    <div>
+      <ul>
+        <li class="fragment">The more complex the code, the harder to keep an eye on everything.</li>
+        <li class="fragment">However, we can build safeguards against problems:
+        <ul>
+          <li class="fragment">Throwing exceptions</li>
+          <li class="fragment">Logging (intermediate) results</li>
+          <li class="fragment"><b>Writing tests</b></li>
+        </ul></li>
+      </ul>
+  </div>
+    <img src="./files/Doh.png" width="250">
+</div>
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
 ## Why Test?
 
 <ul>
