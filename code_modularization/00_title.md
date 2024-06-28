@@ -17,13 +17,18 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 ## What is modularity?
 
 Simple components combined to produce complex behavior.
-<!-- .element: class="fragment" data-fragment-index="2" -->
+
 - Software can be 'built up' from smaller elements.
 <!-- .element: class="fragment" data-fragment-index="3" -->
 - Elements are self-contained and independent.
 <!-- .element: class="fragment" data-fragment-index="4" -->
 - Each element handles a specific (set of) task(s).
 <!-- .element: class="fragment" data-fragment-index="5" -->
+
+<figure style="text-align: center; margin-top: 20px;">
+    <img height="300" alt="modularity" src="files/modern_times.jpg" style="margin-bottom: -10px;">
+        <figcaption style="font-size: 0.3em; color: #666;">Charlie Chaplin in <i>Modern Times</i> (1936).<br>© Roy Export Company Establishment; photograph, the Museum of Modern Art/Film Stills Archive, New York City</figcaption>
+</figure>
 
 ---
 
