@@ -147,10 +147,15 @@ To save time:
 
 ## A good module...
 
-- performs limited and clearly defined tasks
-<!-- .element: class="fragment" data-fragment-index="2" -->
-- has a good name
-<!-- .element: class="fragment" data-fragment-index="3" -->
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/units.png" alt="units" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li class="fragment" data-fragment-index="1">performs limited and clearly defined tasks</li>
+            <li class="fragment" data-fragment-index="2">has a good name</li>
+        </ul>
+    </div>
+</div>
 
 ---
 
@@ -158,12 +163,13 @@ To save time:
 
 ## Naming your module
 
-- focus on human intelligibility
 - be descriptive and clear
-- don't use abbreviations
+- focus on human intelligibility
 - follow language specific conventions
+- avoid abbreviations
 
-<img height="350" alt="naming" src="./files/naming_stuff.jpg">
+<img height="450" alt="naming" src="./files/naming_stuff.jpg">
+<!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
@@ -171,10 +177,16 @@ To save time:
 
 ## A good module...
 
-- performs limited and clearly defined tasks
-- has a good name
-- is readable
-<!-- .element: class="fragment" data-fragment-index="2" -->
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/units.png" alt="units" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li>performs limited and clearly defined tasks</li>
+            <li>has a good name</li>
+            <li class="fragment" data-fragment-index="1">is readable</li>
+        </ul>
+    </div>
+</div>
 
 ---
 
@@ -206,11 +218,17 @@ indexAAG = getIndex(myList,'AAG')
 
 ## A good module...
 
-- performs limited and clearly defined tasks
-- has a good name
-- is readable
-- is pure and predictable
-<!-- .element: class="fragment" data-fragment-index="2" -->
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/units.png" alt="units" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li>performs limited and clearly defined tasks</li>
+            <li>has a good name</li>
+            <li>is readable</li>
+            <li class="fragment" data-fragment-index="1">is pure and predictable</li>
+        </ul>
+    </div>
+</div>
 
 ---
 
@@ -260,6 +278,24 @@ def fahrenheit_to_celsius(temp_list, conversions=None):
 >>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
 >>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
 ```
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
+
+## A good module...
+
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/units.png" alt="units" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li>performs limited and clearly defined tasks</li>
+            <li>has a good name</li>
+            <li>is readable</li>
+            <li>is pure and predictable</li>
+        </ul>
+    </div>
+</div>
 
 ---
 
