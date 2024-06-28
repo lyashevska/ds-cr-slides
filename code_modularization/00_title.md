@@ -239,12 +239,12 @@ indexAAG = getIndex(myList,'AAG')
 ... does not always give the same result:
 
 ```python
-def fahrenheit_to_celsius(temp_list, conversions=[]):
+def fahrenheit_to_celsius(temp_list, converted_temps=[]):
     for temp in temp_list:
         temp_c = (temp - 32.0) * (5.0/9.0)
-        conversions.append(temp_c)
+        converted_temps.append(temp_c)
     
-    return conversions
+    return converted_temps
 
 >>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
 ```
@@ -266,14 +266,14 @@ def fahrenheit_to_celsius(temp_list, conversions=[]):
 ... always gives the same result:
 
 ```python
-def fahrenheit_to_celsius(temp_list, conversions=None):
-    if conversions == None:
-        conversions = []
+def fahrenheit_to_celsius(temp_list, converted_temps=None):
+    if converted_temps == None:
+        converted_temps = []
     for temp in temp_list:
         temp_c = (temp - 32.0) * (5.0/9.0)
-        conversions.append(temp_c)
+        converted_temps.append(temp_c)
     
-    return conversions
+    return converted_temps
 
 >>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
 >>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
