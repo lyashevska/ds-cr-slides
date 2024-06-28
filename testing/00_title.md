@@ -41,25 +41,30 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 ## Why Test?
 
-<ul>
-  <li>Preserve functionality
-  <ul>
-    <li>Detect new errors early</li>
-    <li>Facilitate reproducibility for research software</li>
-  </ul></li>
-  <li class="fragment">Help users
-  <ul>
-    <li>Verify correct installation</li>
-    <li>Improve correctness for research output</li>
-  </ul></li>
-  <li class="fragment">Enable developers
-  <ul>
-    <li>Make refactoring easier</li>
-    <li>Simplify external contributions</li>
-  </ul></li>
-</ul>
+<div style="display: flex; justify-content: center; align-items: center">
+  <div>
+    <ul>
+      <li class="fragment">Preserve functionality
+      <ul>
+        <li>Detect (new) errors early</li>
+        <li>Avoid unexpected outputs</li>
+      </ul></li>
+      <li class="fragment">Help users
+      <ul>
+        <li>Verify correct installation</li>
+        <li>Ensure reproducibility</li>
+      </ul></li>
+      <li class="fragment">Enable developers
+      <ul>
+        <li>Manage complexity</li>
+        <li>Simplify refactoring</li>
+        <li>Facilitate collaboration</li>
+      </ul></li>
+    </ul>
+  </div>
+    <img src="./files/experiment.webp" width="400" style="margin-left: 60px">
+</div>
 
-<h3 style="margin-top: 1em;" class="fragment">🧮 Manage Complexity 🧩</h3>
 
 ---
 
