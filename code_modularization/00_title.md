@@ -17,7 +17,7 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 ## What is modularity?
 
 Simple components combined to produce complex behavior.
-<!-- .element: class="fragment" data-fragment-index="2" -->
+
 - Software can be 'built up' from smaller elements.
 <!-- .element: class="fragment" data-fragment-index="3" -->
 - Elements are self-contained and independent.
@@ -25,13 +25,21 @@ Simple components combined to produce complex behavior.
 - Each element handles a specific (set of) task(s).
 <!-- .element: class="fragment" data-fragment-index="5" -->
 
+<figure style="text-align: center; margin-top: 20px;">
+    <img height="300" alt="modularity" src="files/modern_times.jpg" style="margin-bottom: -10px;">
+        <figcaption style="font-size: 0.3em; color: #666;">Charlie Chaplin in <i>Modern Times</i> (1936).<br>© Roy Export Company Establishment; photograph, the Museum of Modern Art/Film Stills Archive, New York City</figcaption>
+</figure>
+
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
 ## Modular code
 
-<img width="900" alt="think in building blocks" src="https://user-images.githubusercontent.com/5747405/207459058-59c88b4c-1401-428f-b28a-0ac3e72bd964.png">
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+  <img width="400" alt="cohesive" src="./files/small_cohesive_units.png" style="margin-right: 20px;">
+  <img width="400" alt="bohemoth" src="./files/customized_bohemoth.png" class="fragment" data-fragment-index="1">
+</div>
 
 ---
 
@@ -39,12 +47,19 @@ Simple components combined to produce complex behavior.
 
 ## What are these blocks/elements?
 
-- functions
-- classes
-- modules
-- libraries/packages
-- programs
-- ...
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/building_blocks.png" alt="building blocks" height="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li class="fragment" data-fragment-index="1">functions</li>
+            <li class="fragment" data-fragment-index="2">classes</li>
+            <li class="fragment" data-fragment-index="3">modules</li>
+            <li class="fragment" data-fragment-index="4">libraries/packages</li>
+            <li class="fragment" data-fragment-index="5">programs</li>
+            <li class="fragment" data-fragment-index="5">...</li>
+        </ul>
+    </div>
+</div>
 
 ---
 
@@ -132,10 +147,15 @@ To save time:
 
 ## A good module...
 
-- performs limited and clearly defined tasks
-<!-- .element: class="fragment" data-fragment-index="2" -->
-- has a good name
-<!-- .element: class="fragment" data-fragment-index="3" -->
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/units.png" alt="units" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li class="fragment" data-fragment-index="1">performs limited and clearly defined tasks</li>
+            <li class="fragment" data-fragment-index="2">has a good name</li>
+        </ul>
+    </div>
+</div>
 
 ---
 
@@ -143,12 +163,13 @@ To save time:
 
 ## Naming your module
 
-- focus on human intelligibility
 - be descriptive and clear
-- don't use abbreviations
+- focus on human intelligibility
 - follow language specific conventions
+- avoid abbreviations
 
-<img height="350" alt="naming" src="./files/naming_stuff.jpg">
+<img height="450" alt="naming" src="./files/naming_stuff.jpg">
+<!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
@@ -156,10 +177,16 @@ To save time:
 
 ## A good module...
 
-- performs limited and clearly defined tasks
-- has a good name
-- is readable
-<!-- .element: class="fragment" data-fragment-index="2" -->
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/units.png" alt="units" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li>performs limited and clearly defined tasks</li>
+            <li>has a good name</li>
+            <li class="fragment" data-fragment-index="1">is readable</li>
+        </ul>
+    </div>
+</div>
 
 ---
 
@@ -191,11 +218,17 @@ indexAAG = getIndex(myList,'AAG')
 
 ## A good module...
 
-- performs limited and clearly defined tasks
-- has a good name
-- is readable
-- is pure and predictable
-<!-- .element: class="fragment" data-fragment-index="2" -->
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/units.png" alt="units" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li>performs limited and clearly defined tasks</li>
+            <li>has a good name</li>
+            <li>is readable</li>
+            <li class="fragment" data-fragment-index="1">is pure and predictable</li>
+        </ul>
+    </div>
+</div>
 
 ---
 
@@ -250,10 +283,34 @@ def fahrenheit_to_celsius(temp_list, conversions=None):
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
+## A good module...
+
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/units.png" alt="units" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li>performs limited and clearly defined tasks</li>
+            <li>has a good name</li>
+            <li>is readable</li>
+            <li>is pure and predictable</li>
+        </ul>
+    </div>
+</div>
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
+
 ## Identifying opportunities for modularization
 
-- poor readability
-<!-- .element: class="fragment" data-fragment-index="2" -->
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/testing_module.png" alt="testing a single module" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li class="fragment" data-fragment-index="2">poor readability</li>
+        </ul>
+    </div>
+</div>
 
 ---
 
@@ -270,25 +327,39 @@ Modular code becomes more readable
 - Bad readability can be a "code smell"
 <!-- .element: class="fragment" data-fragment-index="4" -->
 
+<figure style="text-align: center; margin-top: 20px;">
+    <img width="400" alt="smelly" src="files/Smelly-Code-Featured.avif" style="margin-bottom: -10px;">
+        <figcaption style="font-size: 0.3em; color: #666;">SIphotography/Depositphotos</figcaption>
+</figure>
+<!-- .element: class="fragment" data-fragment-index="4" -->
+
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
 ## Identifying opportunities for modularization
 
-- poor readability
-- functional units
-<!-- .element: class="fragment" data-fragment-index="2" -->
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/testing_module.png" alt="testing a single module" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li>poor readability</li>
+            <li class="fragment" data-fragment-index="1">repetition</li>
+    </ul>
+  </div>
+</div>
 
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
-## Identify functional units
+## Repetitive code
 
 - Don't Repeat Yourself (DRY): place reused code into a function
-- Identify potential functions by their _action_
-    (e.g. "plot", "transform", "extract", "save")
+- Identify functions units by their _action_
+  - (e.g. "plot", "transform", "extract", "save")
+
+<img height="350" alt="DRY" src="./files/dry-vs-wet-code.jpg">
 
 ---
 
@@ -296,10 +367,16 @@ Modular code becomes more readable
 
 ## Identifying opportunities for modularization
 
-- poor readability
-- functional units
-- nested code
-<!-- .element: class="fragment" data-fragment-index="2" -->
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/testing_module.png" alt="testing a single module" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li>poor readability</li>
+            <li>repetition</li>
+            <li class="fragment" data-fragment-index="1">nested code</li>
+    </ul>
+  </div>
+</div>
 
 ---
 
@@ -347,6 +424,23 @@ def sum_even_numbers(bottom, top):
 
 sum_even_numbers (2,14)  # 42
 ```
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
+
+## Identifying opportunities for modularization
+
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/testing_module.png" alt="testing a single module" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li>poor readability</li>
+            <li>repetition</li>
+            <li>nested code</li>
+    </ul>
+  </div>
+</div>
 
 ---
 
