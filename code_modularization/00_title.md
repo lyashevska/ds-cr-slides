@@ -36,7 +36,10 @@ Simple components combined to produce complex behavior.
 
 ## Modular code
 
-<img width="900" alt="think in building blocks" src="https://user-images.githubusercontent.com/5747405/207459058-59c88b4c-1401-428f-b28a-0ac3e72bd964.png">
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+  <img width="400" alt="cohesive" src="./files/small_cohesive_units.png" style="margin-right: 20px;">
+  <img width="400" alt="bohemoth" src="./files/customized_bohemoth.png" class="fragment" data-fragment-index="1">
+</div>
 
 ---
 
