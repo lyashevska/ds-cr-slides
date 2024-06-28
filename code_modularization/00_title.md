@@ -303,8 +303,14 @@ def fahrenheit_to_celsius(temp_list, conversions=None):
 
 ## Identifying opportunities for modularization
 
-- poor readability
-<!-- .element: class="fragment" data-fragment-index="2" -->
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/testing_module.png" alt="testing a single module" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li class="fragment" data-fragment-index="2">poor readability</li>
+        </ul>
+    </div>
+</div>
 
 ---
 
@@ -321,25 +327,39 @@ Modular code becomes more readable
 - Bad readability can be a "code smell"
 <!-- .element: class="fragment" data-fragment-index="4" -->
 
+<figure style="text-align: center; margin-top: 20px;">
+    <img width="400" alt="smelly" src="files/Smelly-Code-Featured.avif" style="margin-bottom: -10px;">
+        <figcaption style="font-size: 0.3em; color: #666;">SIphotography/Depositphotos</figcaption>
+</figure>
+<!-- .element: class="fragment" data-fragment-index="4" -->
+
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
 ## Identifying opportunities for modularization
 
-- poor readability
-- functional units
-<!-- .element: class="fragment" data-fragment-index="2" -->
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/testing_module.png" alt="testing a single module" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li>poor readability</li>
+            <li class="fragment" data-fragment-index="1">repetition</li>
+    </ul>
+  </div>
+</div>
 
 ---
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
 
-## Identify functional units
+## Repetitive code
 
 - Don't Repeat Yourself (DRY): place reused code into a function
-- Identify potential functions by their _action_
-    (e.g. "plot", "transform", "extract", "save")
+- Identify functions units by their _action_
+  - (e.g. "plot", "transform", "extract", "save")
+
+<img height="350" alt="DRY" src="./files/dry-vs-wet-code.jpg">
 
 ---
 
@@ -347,10 +367,16 @@ Modular code becomes more readable
 
 ## Identifying opportunities for modularization
 
-- poor readability
-- functional units
-- nested code
-<!-- .element: class="fragment" data-fragment-index="2" -->
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/testing_module.png" alt="testing a single module" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li>poor readability</li>
+            <li>repetition</li>
+            <li class="fragment" data-fragment-index="1">nested code</li>
+    </ul>
+  </div>
+</div>
 
 ---
 
@@ -398,6 +424,23 @@ def sum_even_numbers(bottom, top):
 
 sum_even_numbers (2,14)  # 42
 ```
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png"  -->
+
+## Identifying opportunities for modularization
+
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/testing_module.png" alt="testing a single module" width="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li>poor readability</li>
+            <li>repetition</li>
+            <li>nested code</li>
+    </ul>
+  </div>
+</div>
 
 ---
 
