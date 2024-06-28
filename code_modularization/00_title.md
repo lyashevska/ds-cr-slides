@@ -47,12 +47,19 @@ Simple components combined to produce complex behavior.
 
 ## What are these blocks/elements?
 
-- functions
-- classes
-- modules
-- libraries/packages
-- programs
-- ...
+<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    <img src="./files/building_blocks.png" alt="building blocks" height="200" style="margin-right: 20px;">
+    <div>
+        <ul>
+            <li class="fragment" data-fragment-index="1">functions</li>
+            <li class="fragment" data-fragment-index="2">classes</li>
+            <li class="fragment" data-fragment-index="3">modules</li>
+            <li class="fragment" data-fragment-index="4">libraries/packages</li>
+            <li class="fragment" data-fragment-index="5">programs</li>
+            <li class="fragment" data-fragment-index="5">...</li>
+        </ul>
+    </div>
+</div>
 
 ---
 
