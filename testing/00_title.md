@@ -339,7 +339,7 @@ def test_paint_cows():
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
-# Test-Driven Development: FizzBuzz Function
+## Test-Driven Development: FizzBuzz
 
 <div class="r-stack">
   <img src="./files/fizz_buzz_1.svg">
@@ -350,7 +350,7 @@ def test_paint_cows():
   <img class="fragment" data-fragment-index="5" src="./files/fizz_buzz_6.svg">
 </div>
 
-<ul>
+<ul class="fragment">
   <li>fizz_buzz() takes an integer argument and returns it, BUT</li>
   <ul>
     <li class="fragment" data-fragment-index="1">fails on zero or negative numbers</li>
@@ -364,18 +364,17 @@ def test_paint_cows():
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
-## FizzBuzz Function
+## Test driven development assignment:
 
 <ul>
-  <li>fizz_buzz() takes an integer argument and returns it, BUT</li>
+  <li>Create a test function that checks the rules of FizzBuzz:</li>
   <ul>
     <li>fails on zero or negative numbers</li>
-    <li>instead returns "Fizz" on multiples of 3</li>
-    <li>instead returns "Buzz" on multiples of 5</li>
-    <li>instead returns "FizzBuzz" on multiples of 3 and 5</li>
+    <li>return "Fizz" on multiples of 3</li>
+    <li>return "Buzz" on multiples of 5</li>
+    <li>return "FizzBuzz" on multiples of 3 and 5</li>
+    <li>otherwise return itself</li>
   </ul>
-  <li class="fragment">Create an empty function fizz_buzz()</li>
-  <li class="fragment">Write the tests</li>
   <li class="fragment">Paste your tests in the collab document, and discuss</li>
   <li class="fragment">Now write a function code to make your tests pass</li>
 </ul>
@@ -391,4 +390,4 @@ def test_paint_cows():
 - Would your code look different without the tests? <!-- .element class="fragment" -->
 - For what kind of projects would it be (not) useful? <!-- .element class="fragment" -->
 
-<div class="fragment" style="width: 20vw; margin: 1em auto;">Test-Driven Development (TDD) is an optional tool in your toolbox 🛠️</div>
+**Test-Driven Development (TDD) is an optional tool in your toolbox** 🛠️ <!-- .element class="fragment" -->
