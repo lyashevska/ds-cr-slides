@@ -195,14 +195,14 @@ To save time:
 ## More readable != shorter code
 
 Shorter:
-```python=
+```python
 indexATG = [n for n,i in enumerate(myList) if i == 'ATG']
 indexAAG = [n for n,i in enumerate(myList) if i == 'AAG']
 ```
 
 More modular:
 <!-- .element: class="fragment" data-fragment-index="2" -->
-```python=
+```python
 def getIndex(inputList,z):
     zIndex = [n for n,i in enumerate(inputList) if i == z]
     return zIndex
@@ -238,13 +238,13 @@ indexAAG = getIndex(myList,'AAG')
 
 ... does not always give the same result:
 
-```python=
-def fahrenheit_to_celsius(temp_list, conversions=[]):
+```python
+def fahrenheit_to_celsius(temp_list, converted_temps=[]):
     for temp in temp_list:
         temp_c = (temp - 32.0) * (5.0/9.0)
-        conversions.append(temp_c)
+        converted_temps.append(temp_c)
     
-    return conversions
+    return converted_temps
 
 >>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
 ```
@@ -252,7 +252,7 @@ def fahrenheit_to_celsius(temp_list, conversions=[]):
 **Q: What will happen when we call the function a second time?**
 <!-- .element: class="fragment" data-fragment-index="2" -->
 
-```python=
+```python
 >>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0, 0.0, 25.0]
 ```
 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -265,15 +265,15 @@ def fahrenheit_to_celsius(temp_list, conversions=[]):
 
 ... always gives the same result:
 
-```python=
-def fahrenheit_to_celsius(temp_list, conversions=None):
-    if conversions == None:
-        conversions = []
+```python
+def fahrenheit_to_celsius(temp_list, converted_temps=None):
+    if converted_temps == None:
+        converted_temps = []
     for temp in temp_list:
         temp_c = (temp - 32.0) * (5.0/9.0)
-        conversions.append(temp_c)
+        converted_temps.append(temp_c)
     
-    return conversions
+    return converted_temps
 
 >>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
 >>> fahrenheit_to_celsius([32.0, 77.0])  # [0.0, 25.0]
@@ -386,7 +386,7 @@ Modular code becomes more readable
 
 Nested code is a prime target for modularization:
 
-```python=
+```python
 def sum_even_numbers(bottom, top):
     if top > bottom:
         sum = 0
@@ -407,7 +407,7 @@ sum_even_numbers(2, 14)  # 42
 
 ... by extracting modules:
 
-```python=
+```python
 def _filter_even(number):
     if number % 2 == 0:
         return number
