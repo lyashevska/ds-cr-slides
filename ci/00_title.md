@@ -1,30 +1,14 @@
 <!--
 title: Continuous Integration
 description: Automate All The things!
-author: Ole Mussmann
+author: Ole Mussmann, Olga Lyashevska
 version: 4.3.1
 plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, RevealMenu, RevealNotes, RevealSearch, RevealZoom
 -->
 
 <!-- .slide: data-state="blue_overlay yellow_flag yellow_strip purple_half_circle_bottom purple_blob right_e_top" data-background-video="./files/steampunk-85358.mp4" data-background-video-loop data-background-video-muted="true" data-auto-animate data-auto-animate-id="title" -->
 
-# Continuous Integration
-
-
----
-
-<!-- .slide: data-state="blue_overlay yellow_flag yellow_strip purple_half_circle_bottom purple_blob right_e_top" data-background-video="./files/steampunk-85358.mp4" data-background-video-loop data-background-video-muted="true" data-auto-animate data-auto-animate-id="title" -->
-
-# Continuous Integration
-<img src="./files/automate.jpg">
-
----
-
-
-<!-- .slide: data-state="blue_overlay yellow_flag logo" data-background="./files/reload-97640.svg" data-background-size="50%" data-auto-animate data-auto-animate-id="what" -->
-
-
-# Continuous _What_ Now...? 
+# Continuous Integration (CI)
 
 ---
 
@@ -76,7 +60,7 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 /* Blockquote subheader */
 .blockquote h4 {
     position: relative;
-    font-size: 1.4rem;
+    font-size: 1 rem;
     font-weight: normal;
     line-height: 1;
     margin: 0;
@@ -86,27 +70,62 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 </style>
 
-# Continuous _What_ Now...?
+# Continuous Integration (CI)
 
-<div class="blockquote">
-  Automating the integration of code changes from multiple contributors into a single software project.
-<h4>&mdash; <a href="atlassian.com/continuous-delivery/continuous-integration">Atlassian</a></h4>
+<div class="blockquote-wrapper fragment">
+  <div class="blockquote">
+     maintain the main version of a project via frequent or automated integration of changes.
+    <h4>&mdash;</h4>
+  </div>
 </div>
+
+---
+
+<!-- .slide: data-state="blue_overlay yellow_flag yellow_strip purple_half_circle_bottom purple_blob right_e_top" data-background-video="./files/steampunk-85358.mp4" data-background-video-loop data-background-video-muted="true" data-auto-animate data-auto-animate-id="title" -->
+
+
+# Motivation
+How can we implement __automatic testing__ each time we push changes to the repository? 
+
+<img src="./files/automate.jpg">
+
 
 ---
 
 <!-- .slide: data-state="blue_overlay yellow_flag logo 9" data-background="./files/reload-97640.svg" data-background-size="50%" -->
 
-## What Is It Good For? 
-- Linting
-- Automated testing
-- Security analyses
-- Send messages
-  - Slack, Discord, Matrix, Mastodon, email, ...
+## CI includes automatic testing!
+
+Allows to identify any conflicts and bugs that are introduced by changes, so they are found and fixed early, minimising the effort required to do so. 
+
+---
+
+<!-- .slide: data-state="blue_overlay yellow_flag logo 9" data-background="./files/reload-97640.svg" data-background-size="50%" -->
+
+## What else?
 - Building & compiling
   - Code, Documentation, ...
 - Deploying (PyPi, Kubernetes, GitHub Pages)
   - Just like these slides
+- Code analysis
+    - linting (style conventions), formatting, quality metrics, ...
+- Security analyses
+- Send messages
+  - Slack, Discord, Matrix, Mastodon, email, ...
+
+
+---
+
+
+<!-- .slide: data-state="blue_overlay yellow_flag logo 9" data-background="./files/reload-97640.svg" data-background-size="50%" -->
+
+## CI service providers
+
+- GitHub Actions
+- GitLab CI
+- Azure Pipelines
+- Jenkins
+- etc
 
 ---
 
@@ -139,6 +158,6 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
     <li><strong>Person A: </strong>Accept Person B's pull request</li>
   </ol>
 </div>
-<img style="float: right; width: 39%;" src="./files/full-cycle-ci.png">
+<img style="float: right; width: 35%;" src="./files/full-cycle-ci.png">
 
 
