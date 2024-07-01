@@ -74,7 +74,7 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 <div class="blockquote-wrapper fragment">
   <div class="blockquote">
-     Means keeping the main (shared) version of a project up to date via frequent or automated integration of changes.
+     maintain the main version of a project via frequent or automated integration of changes.
     <h4>&mdash;</h4>
   </div>
 </div>
@@ -94,7 +94,7 @@ How can we implement __automatic testing__ each time we push changes to the repo
 
 <!-- .slide: data-state="blue_overlay yellow_flag logo 9" data-background="./files/reload-97640.svg" data-background-size="50%" -->
 
-## CI enables automatic testing!
+## CI includes automatic testing!
 
 Allows to identify any conflicts and bugs that are introduced by changes, so they are found and fixed early, minimising the effort required to do so. 
 
@@ -102,7 +102,7 @@ Allows to identify any conflicts and bugs that are introduced by changes, so the
 
 <!-- .slide: data-state="blue_overlay yellow_flag logo 9" data-background="./files/reload-97640.svg" data-background-size="50%" -->
 
-## What else can CI do?
+## What else?
 - Building & compiling
   - Code, Documentation, ...
 - Deploying (PyPi, Kubernetes, GitHub Pages)
