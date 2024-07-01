@@ -96,6 +96,22 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
+## Testing frameworks
+
+Most modern programming languages have good options to streamline testing
+
+- Python: [Pytest](https://docs.pytest.org/en/7.3.x/)
+- Java: [Junit](https://junit.org/junit5/)
+- R: [testthat](https://testthat.r-lib.org/)
+- Matlab: [Testing Frameworks](https://nl.mathworks.com/help/matlab/matlab-unit-test-framework.html?s_tid=CRUX_lftnav)
+- Julia: [Test](https://docs.julialang.org/en/v1/stdlib/Test/)
+- C++: [GTest](https://google.github.io/googletest/) (developed by Google) or [Catch2](https://catch2-temp.readthedocs.io/en/latest/index.html)
+- etc.
+
+---
+
+<!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
+
 
 ## Testing metrics
 
@@ -187,9 +203,10 @@ def test_convert():  # Special name!
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
-## Using pytest to run tests in Python
+## Running Pytest
 
-[Pytest](https://docs.pytest.org/en/7.3.x/) is the recommended python testing framework
+The `pytest` command will run all functions starting with "test_" from all files starting with "test_".
+
 
 <pre class="fragment"><code style="overflow: hidden;" data-trim class="bash" data-line-numbers="1|1-9">
 $ pytest
@@ -203,8 +220,6 @@ test_example.py .                                                  [100%]
 ========================= 1 passed in 0.00s =========================
 </code></pre>
 
-The `pytest` command will run all functions starting with "test_" from all files starting with "test_".
-<!-- .element: class="fragment" -->
 
 ---
 
