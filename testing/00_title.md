@@ -210,7 +210,7 @@ The `pytest` command will run all functions starting with "test_" from all files
 
 <!-- .slide: data-state="standard" data-background="./files/whitebg.png" -->
 
-## Pytest Excercise
+## Pytest Exercise
 
 1. Add a test to catch "problematic" behavior of the function.
     - don't fix the function (yet)
@@ -330,7 +330,7 @@ def test_paint_cows():
   - You often test anyway, but then throw the test away 🧐
   - Use pytest if programming with Python 🎭
 - You don't have to strive for 💯% test coverage
-  - But be smart about what you ar testing 🧠
+  - But be smart about what you are testing 🧠
 - Aim for a balance between unit- and integration tests ⚖️
 - Testing removes the dread of refactoring 🔁
 - Your future you (and others!) will thank you 🙏
