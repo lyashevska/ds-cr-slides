@@ -73,23 +73,25 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 ## Test Types
 
 <ul>
-  <li class="fragment fade-up">Exceptions in the code base
-  <ul>
-    <li>Intended to handle "expected" problems</li>
-    <li>Sound an alarm as soon as the problem arises</li>
-    <li>Provide clear feedback to the user</li>
-  </ul></li>
-  <li class="fragment fade-up">Unit testing
+  <span class="fragment fade-out" data-fragment-index="4">
+    <li class="fragment fade-up" data-fragment-index="1">Exceptions in the code base
+    <ul>
+      <li>Intended to handle "expected" problems</li>
+      <li>Sound an alarm as soon as the problem arises</li>
+      <li>Provide clear feedback to the user</li>
+  </ul></li></span>
+  <li class="fragment fade-up" data-fragment-index="2">Unit testing
   <ul>
     <li>Smallest possible unit (module)</li>
     <li>No dependency on outside code...</li>
     <li>(... replace them with mocks, stubs, etc.)</li>
   </ul></li>
-  <li class="fragment fade-up">Integration testing
+  <span class="fragment fade-out" data-fragment-index="4">
+  <li class="fragment fade-up" data-fragment-index="3">Integration testing
   <ul>
     <li>Test interactions between units</li>
     <li>Can be on small scales, system wide, ...</li>
-  </ul></li>
+  </ul></li></span>
 </ul>
 
 ---
